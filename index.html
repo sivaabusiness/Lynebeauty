@@ -191,12 +191,16 @@
         .pricing-note { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); }
 
         .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 60px; }
-        .price-row { display: flex; align-items: baseline; padding: 18px 0; border-bottom: 1px dotted var(--line); gap: 16px; }
+        
+        /* CSS SURVOL DE LIGNE (STEALTH LUXE) */
+        .price-row { display: flex; align-items: baseline; padding: 18px 12px; border-bottom: 1px dotted var(--line); gap: 16px; transition: all var(--t-fast); border-radius: 6px; cursor: pointer; }
         .price-row:last-child { border-bottom: none; }
+        .price-row:hover { background-color: var(--bg-warm); transform: translateX(4px); border-bottom-color: transparent;}
         .price-row .name { font-family: var(--ff-display); font-size: 19px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
         .price-row .name small { font-family: var(--ff-body); font-size: 12px; font-weight: 300; color: var(--ink-mute); display: block; margin-top: 2px; }
         .price-row .dots { flex: 0 1 auto; border-bottom: 1px dotted var(--ink-mute); height: 1em; min-width: 20px; }
-        .price-row .price { font-family: var(--ff-display); font-size: 22px; font-weight: 500; color: var(--signature); white-space: nowrap; }
+        .price-row .price { font-family: var(--ff-display); font-size: 22px; font-weight: 500; color: var(--signature); white-space: nowrap; display: flex; align-items: center; }
+        
         .service-cta { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
 
         /* ============================================
@@ -361,17 +365,6 @@
         .reservation-header { text-align: center; margin-bottom: 40px; }
         .reservation-header h2 { font-size: 3rem; margin-bottom: 16px; }
 
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .form-row.bordered { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
-
-        .reservation-form-group { margin-bottom: 24px; }
-        .reservation-form-group label { display: block; font-family: var(--ff-body); font-weight: 500; color: var(--ink); margin-bottom: 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .reservation-form-group input, .reservation-form-group select { width: 100%; padding: 16px; border: 1px solid var(--line); border-radius: 8px; font-family: var(--ff-body); font-size: 16px; background: var(--bg-pure); transition: border-color var(--t-fast); }
-        .reservation-form-group input:focus, .reservation-form-group select:focus { outline: none; border-color: var(--signature); }
-        .submit-btn-wrapper { text-align: center; margin-top: 40px; }
-        .submit-btn-wrapper button { width: 100%; max-width: 400px; padding: 20px 32px; font-size: 16px; }
-        .submit-btn-wrapper button:disabled { background: var(--ink-mute); cursor: not-allowed; transform: none; box-shadow: none; }
-
         .modal { position: fixed; inset: 0; background: rgba(26, 22, 20, 0.7); backdrop-filter: blur(8px); z-index: 200; opacity: 0; visibility: hidden; transition: all var(--t-med); display: flex; align-items: center; justify-content: center; padding: 20px; }
         .modal.open { opacity: 1; visibility: visible; }
         .modal-content { background: var(--bg); max-width: 880px; width: 100%; max-height: 90vh; overflow-y: auto; border-radius: 16px; padding: 60px; position: relative; transform: scale(0.95); transition: transform var(--t-med); }
@@ -467,8 +460,6 @@
             .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 
             .reservation-container { padding: 32px 20px; }
-            .form-row { grid-template-columns: 1fr; gap: 0; }
-            .form-row.bordered { margin-top: 24px; padding-top: 24px; }
             .reservation-form-group { margin-bottom: 20px; }
 
             .footer-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -486,6 +477,45 @@
             .hero { padding-top: 180px; }
         }
     </style>
+
+    <script>
+        const agendaPrestations = {
+            // ONGLERIE
+            'premiere-pose-gel': 'https://meet.brevo.com/institut-lynebeauty/premiere-pose-gel/borderless',
+            'remplissage-gel-4-5-sem': 'https://meet.brevo.com/institut-lynebeauty/remplissage-gel-4-5-sem/borderless',
+            'remplissage-gel-tardif-6-sem': 'https://meet.brevo.com/institut-lynebeauty/remplissage-gel-tardif-6-sem/borderless',
+            'premiere-pose-acrylique': 'https://meet.brevo.com/institut-lynebeauty/premiere-pose-acrylique/borderless',
+            'remplissage-acrylique-tardif-6-sem': 'https://meet.brevo.com/institut-lynebeauty/remplissage-acrylique-tardif-6-sem/borderless',
+            'manucure-simple': 'https://meet.brevo.com/institut-lynebeauty/manucure-simple/borderless',
+            'vernis-semi-permanent-mains': 'https://meet.brevo.com/institut-lynebeauty/vernis-semi-permanent-mains/borderless',
+            'retrait-depose': 'https://meet.brevo.com/institut-lynebeauty/retrait-amp-depose-douce/borderless',
+            
+            // PÉDICURE
+            'pedicure-spa-simple': 'https://meet.brevo.com/institut-lynebeauty/pedicure-pedicure-spa-simple-copy/borderless',
+            'pedicure-spa-semi-permanent': 'https://meet.brevo.com/institut-lynebeauty/pedicure-pedicure-spa-semi-permanent/borderless',
+            'pedicure-gel-acrylique': 'https://meet.brevo.com/institut-lynebeauty/pedicure-gel-ou-acrylique-pieds/borderless',
+            
+            // COIFFURE
+            'tresses-draid': 'https://meet.brevo.com/institut-lynebeauty/tresses-draid-avec-extensions/borderless',
+            'tresses-plaquees': 'https://meet.brevo.com/institut-lynebeauty/coiffure-tresses-plaquees/borderless',
+            'vanilles-twists': 'https://meet.brevo.com/institut-lynebeauty/coiffure-vanilles-ou-twists/borderless',
+            'entretien-locks': 'https://meet.brevo.com/institut-lynebeauty/coiffure-entretien-locks-rasta/borderless',
+            'pose-tissage': 'https://meet.brevo.com/institut-lynebeauty/coiffure-pose-de-tissage-complete/borderless',
+            'pose-perruque': 'https://meet.brevo.com/institut-lynebeauty/coiffure-pose-perruque/borderless',
+            'defrisage': 'https://meet.brevo.com/institut-lynebeauty/coiffure-defrisage/borderless',
+            'coloration-brushing': 'https://meet.brevo.com/institut-lynebeauty/coiffure-coloration-amp-brushing/borderless',
+
+            // GLOBAL
+            'general': 'https://meet.brevo.com/institut-lynebeauty/borderless'
+        };
+
+        function reserverSoin(nomSoin) {
+            const urlUnique = agendaPrestations[nomSoin];
+            if (urlUnique) {
+                BrevoBookingPage.initStaticButton({ url: urlUnique });
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -508,10 +538,10 @@
             <li><a href="#le-salon">Le Salon</a></li>
             <li><a href="#contact">Contact</a></li>
 
-            <li class="mobile-cta-wrapper"><a href="#" class="btn btn-primary" onclick="document.getElementById('burger').click(); BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;">Réserver ma parenthèse</a></li>
+            <li class="mobile-cta-wrapper"><a href="#" class="btn btn-primary" onclick="document.getElementById('burger').click(); reserverSoin('general'); return false;">Réserver ma parenthèse</a></li>
         </ul>
 
-        <a href="#" onclick="BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;" class="nav-cta">Réserver</a>
+        <a href="#" onclick="reserverSoin('general'); return false;" class="nav-cta">Réserver</a>
 
         <button class="burger" id="burger" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -525,7 +555,7 @@
         <h1>Votre <em>parenthèse de sérénité</em> au cœur de Fribourg</h1>
         <h2>Franchissez le seuil de mon boudoir. Jocelyne signe chaque pose, chaque tresse et chaque soin avec la précision d'une orfèvre et la chaleur d'une confidente.</h2>
         <div class="hero-ctas">
-            <a href="#" onclick="BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;" class="btn btn-primary">
+            <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">
                 Réserver votre instant <span class="arrow"></span>
             </a>
             <a href="#universes" class="btn btn-ghost">Découvrir mes rituels</a>
@@ -614,8 +644,7 @@
                 <span class="eyebrow">L'Élégance · Pose & Nail Art</span>
                 <h2>Sublimez vos mains avec<br>une signature qui <em>dure.</em></h2>
                 <p class="lead">Le luxe du gain de temps : vos mains restent impeccables pendant des semaines. Fini les retouches quotidiennes, vous vous réveillez déjà prête, avec une confiance absolue.</p>
-                <p>Dans mon écrin, je ne fais pas simplement les ongles. Je compose. Pose gel, acrylique, semi-permanent ou nail art : chaque technique est exécutée avec la rigueur d'une joaillière et la patience d'une miniaturiste, dans le plus profond respect de votre ongle naturel. Vous repartirez avec des mains qui parlent pour vous.
-                </p>
+                <p>Dans mon écrin, je ne fais pas simplement les ongles. Je compose. Pose gel, acrylique, semi-permanent ou nail art : chaque technique est exécutée avec la rigueur d'une joaillière et la patience d'une miniaturiste, dans le plus profond respect de votre ongle naturel. Vous repartirez avec des mains qui parlent pour vous.</p>
                 <ul class="service-steps">
                     <li><strong>1. Le Diagnostic :</strong> J'analyse la nature de votre ongle pour choisir la technique idéale.</li>
                     <li><strong>2. Le Soin Signature :</strong> Une pose exécutée avec des produits haut de gamme et la précision d'une orfèvre.</li>
@@ -627,67 +656,52 @@
         <div class="pricing-block reveal">
             <div class="pricing-header">
                 <h3>Prestations Onglerie</h3>
-                <span class="pricing-note">Confiez-moi la beauté de vos mains</span>
+                <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
             </div>
             <div class="pricing-grid">
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('premiere-pose-gel')">
                     <div class="name">Première pose Gel<small>Construction complète ~ 1h30 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">85.—</div>
+                    <div class="price">85.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('remplissage-gel-4-5-sem')">
                     <div class="name">Remplissage Gel (4-5 sem.)<small>Entretien régulier ~ 60 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">65.—</div>
+                    <div class="price">65.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('remplissage-gel-tardif-6-sem')">
                     <div class="name">Remplissage Gel (-6 sem.)<small>Entretien tardif ~ 1h20 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">75.—</div>
+                    <div class="price">75.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('premiere-pose-acrylique')">
                     <div class="name">Première pose Acrylique<small>Construction longue tenue ~ 1h20 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">75.—</div>
+                    <div class="price">75.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
-                    <div class="name">Remplissage Acrylique (4-5 sem.)<small>Entretien régulier ~ 50 min</small></div>
-                    <div class="dots"></div>
-                    <div class="price">60.—</div>
-                </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('remplissage-acrylique-tardif-6-sem')">
                     <div class="name">Remplissage Acrylique (-6 sem.)<small>Entretien tardif ~ 1h10 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">70.—</div>
+                    <div class="price">70.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('manucure-simple')">
                     <div class="name">Manucure simple<small>Soin de l'ongle naturel ~ 20 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">30.—</div>
+                    <div class="price">30.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('vernis-semi-permanent-mains')">
                     <div class="name">Vernis semi-permanent<small>Couleur longue durée ~ 40 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">45.—</div>
+                    <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
-                    <div class="name">French, Baby-boomer, Nail Art<small>Décoration sur-mesure</small></div>
-                    <div class="dots"></div>
-                    <div class="price">dès 15.—</div>
-                </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('retrait-depose')">
                     <div class="name">Retrait & Dépose douce<small>Soin professionnel respectueux</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 20.—</div>
+                    <div class="price">dès 20.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
             </div>
-            <div class="price-row">
-                <div class="name">Supplément Longueur Extrême<small>Au-delà de 2 à 3 cm supplémentaires</small></div>
-                <div class="dots"></div>
-                <div class="price">+ 15.—</div>
-            </div>
             <div class="service-cta">
-                <a href="#" onclick="BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;" class="btn btn-primary">Confier mes mains <span class="arrow"></span></a>
+                <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
                 <button class="btn btn-ghost" onclick="openModal('modal-onglerie')">En découvrir davantage</button>
             </div>
         </div>
@@ -721,44 +735,44 @@
         <div class="pricing-block reveal">
             <div class="pricing-header">
                 <h3>Prestations Pédicure Spa</h3>
-                <span class="pricing-note">Soins Esthétiques & Relaxation profonde</span>
+                <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
             </div>
             <div class="pricing-grid">
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('pedicure-spa-simple')">
                     <div class="name">Pédicure Spa<small>Avec gommage & massage relaxant ~ 40 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">60.—</div>
+                    <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('vernis-semi-permanent-mains')">
                     <div class="name">Vernis semi-permanent<small>Tenue impeccable ~ 40 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">45.—</div>
+                    <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('pedicure-spa-semi-permanent')">
                     <div class="name">Pédicure Spa + Semi-permanent<small>Le rituel complet ~ 60 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">90.—</div>
+                    <div class="price">90.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('pedicure-gel-acrylique')">
                     <div class="name">Gel ou Acrylique<small>Construction solide ~ 55 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">60.—</div>
+                    <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('pedicure-gel-acrylique')">
                     <div class="name">Pédicure Spa + Gel / Acrylique<small>L'excellence absolue ~ 1h15 min</small></div>
                     <div class="dots"></div>
-                    <div class="price">110.—</div>
+                    <div class="price">110.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
             </div>
             <div class="service-cta">
-                <a href="#" onclick="BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;" class="btn btn-primary">Réserver cet instant <span class="arrow"></span></a>
+                <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
                 <button class="btn btn-ghost" onclick="openModal('modal-pedicure')">En découvrir davantage</button>
             </div>
         </div>
     </div>
 </section>
 
-    <section class="service-detail" id="coiffure">
+<section class="service-detail" id="coiffure">
     <div class="container">
         <div class="service-hero">
             <div class="service-visual-column">
@@ -792,52 +806,52 @@
         <div class="pricing-block reveal">
             <div class="pricing-header">
                 <h3>Prestations Atelier Coiffure</h3>
-                <span class="pricing-note">Tresses, Tissages & Soins Classiques</span>
+                <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
             </div>
             <div class="pricing-grid">
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('tresses-draid')">
                     <div class="name">Tresses draid<small>Avec extensions</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 160.—</div>
+                    <div class="price">dès 160.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('tresses-plaquees')">
                     <div class="name">Tresses plaquées<small>Avec ou sans extensions</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 50.—</div>
+                    <div class="price">dès 50.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('vanilles-twists')">
                     <div class="name">Vanilles ou Twists<small>Coiffure protectrice</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 100.—</div>
+                    <div class="price">dès 100.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('entretien-locks')">
                     <div class="name">Serrer les locks / Rasta<small>Entretien et soin</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 160.—</div>
+                    <div class="price">dès 160.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('pose-tissage')">
                     <div class="name">Tissage<small>Pose complète harmonieuse</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 120.—</div>
+                    <div class="price">dès 120.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('pose-perruque')">
                     <div class="name">Pose perruque<small>Ajustement sur-mesure</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 60.—</div>
+                    <div class="price">dès 60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('defrisage')">
                     <div class="name">Défrisage<small>Soin lissant & nourrissant</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 80.—</div>
+                    <div class="price">dès 80.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row">
+                <div class="price-row" onclick="reserverSoin('coloration-brushing')">
                     <div class="name">Coloration & Brushing<small>Mise en lumière parfaite</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 50.—</div>
+                    <div class="price">dès 50.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
             </div>
             <div class="service-cta">
-                <a href="#" onclick="BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;" class="btn btn-primary">Confier mes cheveux <span class="arrow"></span></a>
+                <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
                 <button class="btn btn-ghost" onclick="openModal('modal-coiffure')">En découvrir davantage</button>
             </div>
         </div>
@@ -1184,12 +1198,6 @@
                 </div>
             </a>
             <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener">
-                <img src="img/coiffure4.webp" alt="Réalisations coiffure et tresses Lyne Beauty Fribourg" loading="lazy" />
-                <div class="insta-overlay">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </div>
-            </a>
-            <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener">
                 <img src="img/feed6-onglerie.webp" alt="Réalisations coiffure et tresses Lyne Beauty Fribourg" loading="lazy" />
                 <div class="insta-overlay">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -1281,7 +1289,7 @@
                 <p style="color: var(--ink-soft); max-width: 500px; margin: 0 auto;">Sélectionnez votre rituel et choisissez l'horaire qui vous convient. Notre agenda en ligne est disponible 24h/24.</p>
             </div>
 
-            <a href="#" onclick="BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;" class="btn btn-primary" style="font-size: 16px; padding: 24px 48px;">
+            <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary" style="font-size: 16px; padding: 24px 48px;">
                 Ouvrir l'agenda de l'institut <span class="arrow"></span>
             </a>
 
@@ -1375,10 +1383,8 @@
                 <ul>
                     <li><a href="#onglerie">Onglerie Signature</a></li>
                     <li><a href="#pedicure">Beauté des pieds</a></li>
-                    <li><a href="#coiffure">Atelier Coiffure</a></li>
                     <li><a href="javascript:void(0)" onclick="openModal('modal-onglerie')">Expertise Onglerie</a></li>
                     <li><a href="javascript:void(0)" onclick="openModal('modal-pedicure')">Expertise Pédicure</a></li>
-                    <li><a href="javascript:void(0)" onclick="openModal('modal-coiffure')">Expertise Coiffure</a></li>
                     <li><a href="javascript:void(0)" onclick="openModal('modal-blog')">Conseils beauté</a></li>
                 </ul>
             </div>
@@ -1388,7 +1394,7 @@
                     <li><a href="#about">L'Écrin</a></li>
                     <li><a href="#faq">Questions Douces</a></li>
                     <li><a href="#contact">Me Trouver</a></li>
-                    <li><a href="#" onclick="BrevoBookingPage.initStaticButton({ url: 'https://meet.brevo.com/institut-lynebeauty/borderless' }); return false;">Réserver ma parenthèse</a></li>
+                    <li><a href="#" onclick="reserverSoin('general'); return false;">Réserver ma parenthèse</a></li>
                 </ul>
             </div>
             <div>
