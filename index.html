@@ -232,7 +232,7 @@
         .universes-header h2 em { color: var(--gold-light); }
         .universes-header h2::before { content: '✺'; display: block; font-size: 18px; margin-bottom: 16px; color: var(--gold-light); }
         .universes-header p { max-width: 680px; margin: 24px auto 0; color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.7; }
-        .universes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .universes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
         .universe-card { text-align: center; cursor: pointer; transition: transform var(--t-med); }
         .universe-card:hover { transform: translateY(-12px); }
         .universe-arch { width: 80%; max-width: 300px; aspect-ratio: 4/5; margin: 0 auto 28px; border-radius: var(--radius-img); overflow: hidden; border: 1px solid rgba(255,255,255,0.2); position: relative; }
@@ -500,6 +500,7 @@
             <li><a href="#universes">Mes Rituels</a></li>
             <li><a href="#onglerie">Onglerie</a></li>
             <li><a href="#pedicure">Pédicure</a></li>
+            <li><a href="#coiffure">Coiffure</a></li>
             <li><a href="#about">L'Institut</a></li>
             <li><a href="#le-salon">Le Salon</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -571,6 +572,16 @@
                 <h3>La Pédicure</h3>
                 <p class="desc">Soin profond, gommage et massage relaxant. Une parenthèse de légèreté absolue pour vous ancrer dans le présent.</p>
                 <a href="#pedicure" class="universe-link">Découvrir <span class="arrow"></span></a>
+            </article>
+
+            <article class="universe-card reveal" style="transition-delay: 0.2s;" onclick="document.querySelector('#coiffure').scrollIntoView({behavior:'smooth'})">
+                <div class="universe-arch fade-carousel">
+                    <img src="img/tresses.webp" class="active" alt="Coiffures réalisées chez Lyne Beauty 1" loading="lazy" />
+                </div>
+                <div class="tagline">Rituel III · La Couronne sublimée</div>
+                <h3>La Coiffure</h3>
+                <p class="desc">Tresses, tissages, colorations. Confiez-moi vos cheveux pour révéler votre nature profonde, en toute sérénité.</p>
+                <a href="#coiffure" class="universe-link">Découvrir <span class="arrow"></span></a>
             </article>
         </div>
     </div>
@@ -665,11 +676,6 @@
                     <div class="price">dès 20.—</div>
                 </div>
             </div>
-            <div class="price-row">
-                <div class="name">Supplément Longueur Extrême<small>Au-delà de 2 à 3 cm supplémentaires</small></div>
-                <div class="dots"></div>
-                <div class="price">+ 15.—</div>
-            </div>
             <div class="service-cta">
                 <a href="#reservation" rel="noopener" class="btn btn-primary">Confier mes mains <span class="arrow"></span></a>
                 <button class="btn btn-ghost" onclick="openModal('modal-onglerie')">En découvrir davantage</button>
@@ -732,11 +738,6 @@
                     <div class="price">110.—</div>
                 </div>
             </div>
-            <div class="price-row">
-                <div class="name">Supplément Longueur Extrême<small>Au-delà de 2 à 3 cm supplémentaires</small></div>
-                <div class="dots"></div>
-                <div class="price">+ 15.—</div>
-            </div>
             <div class="service-cta">
                 <a href="#reservation" rel="noopener" class="btn btn-primary">Réserver cet instant <span class="arrow"></span></a>
                 <button class="btn btn-ghost" onclick="openModal('modal-pedicure')">En découvrir davantage</button>
@@ -745,7 +746,93 @@
     </div>
 </section>
 
-<section class="about" id="about" style="background: var(--bg-pure);">
+<section class="service-detail" id="coiffure">
+    <div class="container">
+        <div class="service-hero">
+            <div class="service-visual-column">
+                <div class="service-img reveal fade-carousel">
+                    <img src="img/tresses.webp" class="active" alt="Coiffures tresses" loading="lazy" />
+                    <img src="img/tressep.webp" alt="Coiffures 2" loading="lazy" />
+                    <img src="img/tresses-femme3.webp" alt="Coiffures 3" loading="lazy" />
+                    <img src="img/tresses-homme4.webp" alt="Coiffures 4" loading="lazy" />
+                    <img src="img/f6-coiffure.webp" alt="Coiffures 4" loading="lazy" />
+                    <div class="service-img-tag">Rituel III</div>
+                </div>
+                <div class="reveal" style="margin-top: 24px; text-align: center;">
+                    <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener" class="btn btn-ghost" style="width: 100%; justify-content: center; display: inline-flex;">
+                        Voir mes coiffures <span class="arrow"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="service-text reveal">
+                <span class="eyebrow">La Couronne · Coiffure Afro & Classique</span>
+                <h2>Révélez votre nature,<br>en toute <em>confiance.</em></h2>
+                <p class="lead">Le luxe du gain de temps : une coiffure protectrice, un tissage ou un lissage parfaitement exécuté vous libère l'esprit. Vous êtes prête à conquérir votre journée.</p>
+                <p>Dans mon atelier, la coiffure est avant tout un échange. Je vous écoute, j'analyse avec bienveillance la nature de vos cheveux, et nous décidons ensemble de ce qui vous sublimera le mieux.</p>
+                <ul class="service-steps">
+                    <li><strong>1. Le Diagnostic :</strong> Étude de votre cuir chevelu et de la texture de vos cheveux.</li>
+                    <li><strong>2. Le Soin Signature :</strong> Exécution minutieuse sans douleur, avec des mèches et produits de haute qualité.</li>
+                    <li><strong>3. Les Conseils :</strong> Routine d'hydratation (foulard en satin, huiles) pour faire durer votre couronne.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pricing-block reveal">
+            <div class="pricing-header">
+                <h3>Prestations Atelier Coiffure</h3>
+                <span class="pricing-note">Tresses, Tissages & Soins Classiques</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-row">
+                    <div class="name">Tresses draid<small>Avec extensions</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 160.—</div>
+                </div>
+                <div class="price-row">
+                    <div class="name">Tresses plaquées<small>Avec ou sans extensions</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 50.—</div>
+                </div>
+                <div class="price-row">
+                    <div class="name">Vanilles ou Twists<small>Coiffure protectrice</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 100.—</div>
+                </div>
+                <div class="price-row">
+                    <div class="name">Serrer les locks / Rasta<small>Entretien et soin</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 160.—</div>
+                </div>
+                <div class="price-row">
+                    <div class="name">Tissage<small>Pose complète harmonieuse</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 120.—</div>
+                </div>
+                <div class="price-row">
+                    <div class="name">Pose perruque<small>Ajustement sur-mesure</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 60.—</div>
+                </div>
+                <div class="price-row">
+                    <div class="name">Défrisage<small>Soin lissant & nourrissant</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 80.—</div>
+                </div>
+                <div class="price-row">
+                    <div class="name">Coloration & Brushing<small>Mise en lumière parfaite</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 50.—</div>
+                </div>
+            </div>
+            <div class="service-cta">
+                <a href="#reservation" rel="noopener" class="btn btn-primary">Confier mes cheveux <span class="arrow"></span></a>
+                <button class="btn btn-ghost" onclick="openModal('modal-coiffure')">En découvrir davantage</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
     <div class="container">
         <div class="about-grid">
             <div class="about-content reveal">
@@ -822,8 +909,8 @@
             </div>
             <div style="margin-top: 10px;">
                 <a href="https://www.google.com/search?sca_esv=b8c2a88c761a13ca&sxsrf=ANbL-n6RlqX-nNSZNxbETR1VS_KLm5iKhw:1778236489047&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWduoA-o-svSBlsxOh2NpDxdCddpYxmLF1NEp2KzsZQt8kXPw4K99Cp_NuXruKSj4-JIZCoo0GQHhx03RKHLwyMT-Ml_2PIo0MLn6sp7UkDNYbID26obZDtLYhtkKLdYwFPTTlc%3D&q=Institut+Lyne+Beauty+Onglerie+%26+Coiffeur+Avis&sa=X&ved=2ahUKEwjNl4aSv6mUAxXbVqQEHeKbPWsQ0bkNegQIKxAF&biw=1440&bih=778&dpr=2&zx=1778236697262" target="_blank" rel="noopener" class="reviews-google-link">Rédiger un avis</a><br>
-            </div>
-            <br><div class="reviews-carousel reveal">
+        </div>
+        <br><div class="reviews-carousel reveal">
             <div class="reviews-track" id="reviewsTrack">
 
                 <div class="review-slide">
@@ -1046,7 +1133,7 @@
             <button class="review-arrow prev" onclick="prevSlide()" aria-label="Avis précédent">❮</button>
             <button class="review-arrow next" onclick="nextSlide()" aria-label="Avis suivant">❯</button>
         </div>
-        </div>
+    </div>
 </section>
 
 <section class="gallery">
@@ -1327,8 +1414,10 @@
                 <ul>
                     <li><a href="#onglerie">Onglerie Signature</a></li>
                     <li><a href="#pedicure">Beauté des pieds</a></li>
+                    <li><a href="#coiffure">Atelier Coiffure</a></li>
                     <li><a href="javascript:void(0)" onclick="openModal('modal-onglerie')">Expertise Onglerie</a></li>
                     <li><a href="javascript:void(0)" onclick="openModal('modal-pedicure')">Expertise Pédicure</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('modal-coiffure')">Expertise Coiffure</a></li>
                     <li><a href="javascript:void(0)" onclick="openModal('modal-blog')">Conseils beauté</a></li>
                 </ul>
             </div>
@@ -1358,11 +1447,7 @@
                 <span>Onglerie & Coiffure · Fribourg</span>
             </div>
         </div>
-    <div style="font-size: 11px; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-top: 8px;">
-                Site réalisé avec passion par <a href="https://goldaura.ch/" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: none; transition: color 0.3s ease;">L'Agence Web Gold Aura</a>
-            </div>
-        </div>
-        </div>
+    </div>
 </footer>
 
 <a href="https://wa.me/41779986426?text=Bonjour%2C%20je%20viens%20du%20site%20internet.%20Je%20souhaite%20vous%20poser%20une%20question%20sur%20%3A%20" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contact WhatsApp">
@@ -1412,6 +1497,56 @@
 
         <h3>Hygiène et protocole</h3>
         <p>Stérilisation complète des outils entre chaque cliente, limes à usage unique, table désinfectée, gants pour chaque pose. Une exigence non négociable de l'institut.</p>
+    </div>
+</div>
+
+<div class="modal" id="modal-coiffure">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modal-coiffure')">×</button>
+        <span class="eyebrow">Expertise · Univers III</span>
+        <h2>La <em>coiffure</em> afro & classique</h2>
+        <p>Tresses afro, tissages haute tenue, colorations professionnelles, défrisages, brushings, coupes femme, homme, enfant : Lyne Beauty est l'un des rares salons de Fribourg à maîtriser pleinement ces deux univers capillaires.</p>
+
+        <h3>Tresses : draid, plaquées, rasta</h3>
+        <p>Les tresses sont une signature de la maison. <strong>Plaquées (cornrows)</strong> : motifs simples ou élaborés, idéales en base sous tissage ou perruque. <strong>Draid</strong> : tresses individuelles longues, avec ou sans rajout. <strong>Rasta</strong> : locks naturels, entretien et formation. Durée : entre 2h et 5h selon le volume.</p>
+
+        <h3>Tissages et pose de perruques</h3>
+        <p>Pose de tissage cousu main, mèches naturelles ou synthétiques, ajustement millimétré pour un rendu naturel. La pose de perruque inclut le réglage, la sécurisation et le coiffage final. Entretien recommandé toutes les 6 à 8 semaines.</p>
+
+        <h3>Colorations & techniques de couleur</h3>
+        <p>Coloration racines pour entretenir une teinte uniforme, applications minutieuses avec une palette professionnelle. Adaptation aux cheveux fragilisés ou défrisés grâce à des soins préalables.</p>
+
+        <h3>Coupes, brushings, défrisages</h3>
+        <p>Coupes femme, homme et enfant à 35 CHF. Brushings adaptés à la longueur (40 à 60 CHF), réalisés à la brosse ronde ou plate. Défrisage longue tenue à 70 CHF, avec produit professionnel et soin nourrissant en finition.</p>
+
+        <h3>Produits et accessoires en boutique</h3>
+        <p>Sélection de mèches X-Pression 100% kanekalon, soins capillaires afro, huiles, masques. Demandez conseil à Jocelyne, elle saura vous orienter selon votre type de cheveu.</p>
+    </div>
+</div>
+
+<div class="modal" id="modal-blog">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modal-blog')">×</button>
+        <span class="eyebrow">Journal · Conseils beauté</span>
+        <h2>Trois <em>conseils</em> pour rayonner</h2>
+        <p>Les recommandations de Jocelyne, partagées avec le sourire et l'expérience de quinze ans de pratique en institut.</p>
+
+        <div class="blog-articles">
+            <article class="blog-article">
+                <h3>1. Faire durer une pose de gel : les vrais gestes</h3>
+                <p>Une pose de gel bien posée tient 3 à 4 semaines, à condition de la respecter. <strong>Première règle : portez des gants pour la vaisselle et les produits ménagers</strong> — l'eau chaude et les détergents fragilisent l'adhésion. <strong>Deuxième règle : huilez vos cuticules tous les soirs</strong> avec une huile végétale (jojoba, ricin) pour nourrir le contour et éviter les décollements. <strong>Troisième règle : ne jamais s'arracher un ongle qui se décolle</strong> — repassez à l'institut, c'est gratuit ou symbolique. Vous préservez ainsi votre ongle naturel.</p>
+            </article>
+
+            <article class="blog-article">
+                <h3>2. Tresses qui durent : l'entretien minute</h3>
+                <p>Les tresses afro tiennent jusqu'à 8 semaines avec un entretien régulier. <strong>Le soir, attachez vos tresses sous un foulard en satin</strong> — le coton absorbe l'humidité et favorise les frisottis. <strong>Hydratez le cuir chevelu</strong> deux fois par semaine avec un spray à base d'eau et d'huile légère. <strong>Évitez l'eau chlorée</strong> : si vous nagez, mettez un bonnet ou rincez immédiatement à l'eau claire. Et surtout, <strong>ne tirez jamais</strong> sur une tresse qui démange — l'irritation se gère par massage doux, pas par grattage.</p>
+            </article>
+
+            <article class="blog-article">
+                <h3>3. Vernis semi-permanent : la fin de pose qui change tout</h3>
+                <p>La dépose maison du semi-permanent abîme l'ongle naturel à coup sûr. <strong>Toujours faire déposer professionnellement</strong> (20 CHF chez moi) : c'est dix fois moins cher qu'une cure de remise en état. Entre deux poses, <strong>laissez vos ongles respirer 48h</strong> et appliquez un soin fortifiant. Hydratez vos cuticules quotidiennement. Et n'oubliez pas : <strong>un ongle naturel sain est la condition d'une belle pose</strong>. Le repos est un investissement, pas une perte de temps.</p>
+            </article>
+        </div>
     </div>
 </div>
 
