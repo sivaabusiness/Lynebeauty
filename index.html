@@ -179,10 +179,35 @@
         .service-text .lead { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 24px; }
         .service-text p { font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 16px; }
 
-        .service-steps { margin-top: 24px; list-style: none; padding: 0; }
-        .service-steps li { font-size: 15px; color: var(--ink-soft); margin-bottom: 12px; line-height: 1.7; display: flex; align-items: baseline; gap: 10px; }
-        .service-steps li strong { color: var(--ink); font-weight: 500; }
-        .service-steps li::before { content: '✦'; color: var(--signature); font-size: 12px; }
+        .service-steps { 
+    margin-top: 24px; 
+    list-style: none; 
+    padding: 0; 
+}
+
+        .service-steps li { 
+    font-size: 15px; 
+    color: var(--ink-soft); 
+    margin-bottom: 12px; 
+    line-height: 1.7; 
+    position: relative; /* Remplace le display: flex */
+    padding-left: 20px; /* Laisse de l'espace pour la puce à gauche */
+}
+
+        .service-steps li strong { 
+    color: var(--ink); 
+    font-weight: 500; 
+    margin-right: 5px; /* Petit espace entre le titre gras et le texte */
+}
+
+        .service-steps li::before { 
+    content: '✦'; 
+    color: var(--signature); 
+    font-size: 12px; 
+    position: absolute; 
+    left: 0; 
+    top: 2px; /* Ajuste l'alignement vertical de l'étoile */
+}
 
         .pricing-block { background: var(--bg-pure); border: 1px solid var(--line); border-top: 3px solid var(--signature); padding: 60px; border-radius: 8px; position: relative; }
         .service-detail.alt .pricing-block { background: var(--bg); }
@@ -1478,6 +1503,11 @@
         <button class="modal-close" onclick="closeModal('modal-pedicure')">×</button>
         <span class="eyebrow">Expertise · Univers II</span>
         <h2>La <em>pédicure</em> Spa & Beauté</h2>
+        
+        <div style="background-color: #faf5f5; color: #8a3c3c; padding: 12px 16px; border-left: 3px solid #d97777; margin: 15px 0; font-size: 14px;">
+            <strong>Information importante :</strong> Pour des raisons médicales et d'hygiène, l'esthéticienne ne prend pas en charge les personnes présentant des mycoses ou des pathologies du pied. Merci de vous orienter vers un podologue pour ces soins.
+        </div>
+
         <p>À Fribourg, je vous ouvre les portes d'un véritable sanctuaire pour vos pieds. Alliant esthétique pure et relaxation profonde, mon rituel pédicure n'est pas un simple soin : c'est un moment de lâcher-prise conçu pour soulager vos appuis et sublimer vos ongles.</p>
 
         <h3>Le Soin Spa : Callosités & Hydratation</h3>
