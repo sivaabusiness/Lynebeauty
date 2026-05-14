@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Institut Lyne Beauty — Onglerie & Coiffure à Fribourg | Pose de gel, Tresses, Vernis semi-permanent</title>
-    <meta name="description" content="Institut Lyne Beauty à Fribourg — Expertise Onglerie (pose gel, acrylique, vernis semi-permanent, nail art) et Coiffure Afro & Classique (tresses, tissages, colorations). Rue de Zaehringen 4, 1700 Fribourg. Avec ou sans rendez-vous." />
-    <meta name="keywords" content="Onglerie Fribourg, Pose de gel Fribourg, Coiffure Fribourg, Tresses Fribourg, Vernis semi-permanent Fribourg, Nail art, Coiffure Afro Fribourg" />
+    <!-- SYNC GOOGLE BUSINESS PROFILE -->
+    <title>Institut Lyne Beauty Onglerie & Coiffeur — Fribourg | Pose de gel, Tresses</title>
+    <meta name="description" content="Institut Lyne Beauty Onglerie & Coiffeur à Fribourg (Rue de Zaehringen 4) — Expertise Onglerie (pose gel, vernis semi-permanent) et Coiffure Afro/Classique. Réservez sur brevo.com." />
+    <meta name="keywords" content="Onglerie Fribourg, Institut Lyne Beauty Onglerie & Coiffeur, Pose de gel Fribourg, Coiffure Fribourg, Tresses Fribourg, Vernis semi-permanent" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Institut Lyne Beauty" />
 
     <link rel="icon" type="image/webp" href="img/logo-lyne.webp">
     <link rel="apple-touch-icon" href="img/logo-lyne.webp">
-
     <link rel="canonical" href="https://lynebeauty.ch/" />
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
 
     <meta property="og:type" content="business.business" />
-    <meta property="og:title" content="Institut Lyne Beauty — Onglerie & Coiffure à Fribourg" />
+    <meta property="og:title" content="Institut Lyne Beauty Onglerie & Coiffeur — Fribourg" />
     <meta property="og:description" content="Expertise double : Onglerie pointue & Coiffure Afro/Classique. Rue de Zaehringen 4, 1700 Fribourg." />
     <meta property="og:locale" content="fr_CH" />
     <meta property="og:image" content="img/hero.webp" />
@@ -69,6 +70,18 @@
         button { font-family: inherit; cursor: pointer; border: none; background: none; }
         ::selection { background: var(--signature); color: #fff; }
 
+        /* MAILLAGE INTERNE - STYLE DES LIENS DANS LE TEXTE */
+        .text-link {
+            color: var(--signature-deep);
+            border-bottom: 1px solid var(--line);
+            font-weight: 400;
+            transition: all var(--t-fast);
+        }
+        .text-link:hover {
+            color: var(--signature);
+            border-bottom-color: var(--signature);
+        }
+
         /* ============================================
            TYPOGRAPHIE
            ============================================ */
@@ -84,23 +97,13 @@
         .container { width: 100%; max-width: 1380px; margin: 0 auto; padding: 0 32px; }
         section { position: relative; }
 
-        /* --- PROMO BANNER --- */
         .promo-banner { background: var(--ink); color: var(--gold-light); text-align: center; padding: 10px 20px; font-size: 12px; letter-spacing: 0.08em; position: absolute; top: 0; left: 0; width: 100%; z-index: 101; font-family: var(--ff-body); }
         .promo-banner strong { font-weight: 600; color: #fff; }
 
-        /* --- NAV --- */
         .nav { position: fixed; top: 38px; left: 0; right: 0; z-index: 100; padding: 22px 0; transition: all var(--t-med); background: transparent; }
         .nav.scrolled { top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 14px 0; border-bottom: 1px solid var(--line); }
 
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1380px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1380px; margin: 0 auto; padding: 0 20px; }
 
         .mobile-cta-wrapper { display: none; }
         .logo { font-family: var(--ff-display); font-size: 28px; font-weight: 400; letter-spacing: 0.04em; display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
@@ -179,35 +182,10 @@
         .service-text .lead { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 24px; }
         .service-text p { font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 16px; }
 
-        .service-steps {
-            margin-top: 24px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-steps li {
-            font-size: 15px;
-            color: var(--ink-soft);
-            margin-bottom: 12px;
-            line-height: 1.7;
-            position: relative; /* Remplace le display: flex */
-            padding-left: 20px; /* Laisse de l'espace pour la puce à gauche */
-        }
-
-        .service-steps li strong {
-            color: var(--ink);
-            font-weight: 500;
-            margin-right: 5px; /* Petit espace entre le titre gras et le texte */
-        }
-
-        .service-steps li::before {
-            content: '✦';
-            color: var(--signature);
-            font-size: 12px;
-            position: absolute;
-            left: 0;
-            top: 2px; /* Ajuste l'alignement vertical de l'étoile */
-        }
+        .service-steps { margin-top: 24px; list-style: none; padding: 0; }
+        .service-steps li { font-size: 15px; color: var(--ink-soft); margin-bottom: 12px; line-height: 1.7; position: relative; padding-left: 20px; }
+        .service-steps li strong { color: var(--ink); font-weight: 500; margin-right: 5px; }
+        .service-steps li::before { content: '✦'; color: var(--signature); font-size: 12px; position: absolute; left: 0; top: 2px; }
 
         .pricing-block { background: var(--bg-pure); border: 1px solid var(--line); border-top: 3px solid var(--signature); padding: 60px; border-radius: 8px; position: relative; }
         .service-detail.alt .pricing-block { background: var(--bg); }
@@ -217,7 +195,6 @@
 
         .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 60px; }
 
-        /* CSS SURVOL DE LIGNE (STEALTH LUXE) */
         .price-row { display: flex; align-items: baseline; padding: 18px 12px; border-bottom: 1px dotted var(--line); gap: 16px; transition: all var(--t-fast); border-radius: 6px; cursor: pointer; }
         .price-row:last-child { border-bottom: none; }
         .price-row:hover { background-color: var(--bg-warm); transform: translateX(4px); border-bottom-color: transparent;}
@@ -281,15 +258,12 @@
         /* ============================================
            AVIS
            ============================================ */
-
-        /* --- FILTRES COIFFURE --- */
         .pricing-filters { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
         .filter-btn { padding: 10px 20px; border: 1px solid var(--line); border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--ink-soft); transition: all var(--t-fast); }
         .filter-btn:hover { border-color: var(--signature); color: var(--signature); }
         .filter-btn.active { background: var(--signature); border-color: var(--signature); color: var(--bg-pure); }
         .price-row.hidden { display: none !important; }
 
-        /* --- SOUS-TITRES SUPPLÉMENTS --- */
         .pricing-subtitle { grid-column: 1 / -1; font-family: var(--ff-display); font-style: italic; font-size: 22px; margin: 32px 0 16px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink); }
 
         .review-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; background: var(--bg-pure); color: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 10; transition: all var(--t-fast); box-shadow: var(--shadow-soft); cursor: pointer;}
@@ -408,9 +382,6 @@
         .modal-close { position: absolute; top: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--bg-warm); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--ink); transition: all var(--t-fast); cursor: pointer;}
         .modal-close:hover { background: var(--signature); color: white; transform: rotate(90deg); }
 
-        .blog-articles { display: grid; gap: 32px; margin-top: 24px; }
-        .blog-article { padding: 24px; background: var(--bg-pure); border-radius: 12px; border-left: 3px solid var(--signature); }
-
         /* ============================================
            FOOTER
            ============================================ */
@@ -460,55 +431,42 @@
 
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-
             .nav-links { position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: var(--bg); flex-direction: column; justify-content: center; gap: 32px; transition: right var(--t-med); box-shadow: var(--shadow-deep); padding: 40px; }
             .nav-links.open { right: 0; }
             .burger { display: block; z-index: 102; }
             .nav-cta { display: none; }
-
             .hero h1 { font-size: 2rem; }
             .hero-content { padding: 0 20px; }
             .hero-visual { height: auto; aspect-ratio: 4/5; min-height: unset; margin-top: 40px; padding: 0; }
             .btn { width: 100%; justify-content: center; }
-
             .nav-inner { padding: 0 24px; }
             .mobile-cta-wrapper { display: block; margin-top: 24px; width: 100%; }
             .mobile-cta-wrapper .btn { width: 100%; justify-content: center; }
-
             .pricing-block { padding: 32px 24px; }
             .pricing-grid { grid-template-columns: 1fr; gap: 0; }
             .price-row { flex-direction: column; gap: 8px; border-bottom: 1px solid var(--line); padding: 20px 0; }
             .price-row .dots { display: none; }
             .price-row .price { font-size: 20px; align-self: flex-start; }
-
             .universes-grid { grid-template-columns: 1fr; gap: 50px; }
             .about-stats { grid-template-columns: 1fr; gap: 32px; text-align: center; }
-
             .review-slide { flex-direction: column; gap: 20px; padding: 0 8px; }
             .review-card { max-width: 100%; padding: 28px; }
-
             .reviews-carousel { padding-bottom: 70px; }
             .review-arrow { top: auto; bottom: 0; transform: none; width: 44px; height: 44px; }
             .review-arrow.prev { left: 25%; }
             .review-arrow.next { right: 25%; }
             .reviews-dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); margin-top: 0; }
-
             .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-
             .reservation-container { padding: 32px 20px; }
             .reservation-form-group { margin-bottom: 20px; }
-
             .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-
             .modal-content { padding: 40px 24px; margin-top: 30px;}
             .contact-hours { padding: 32px 24px; }
-
             .promo-banner { position: absolute; font-size: 11px; padding: 10px; }
             .nav { padding: 12px 0; position: fixed; top: 54px; }
             .nav.scrolled { padding: 12px 0; position: fixed; top: 0; }
             .logo { font-size: 22px; }
             .logo img { height: 40px; }
-
             section { padding: 80px 0; }
             .hero { padding-top: 180px; }
         }
@@ -532,7 +490,6 @@
             'pedicure-spa-semi-permanent': 'https://meet.brevo.com/institut-lynebeauty/pedicure-pedicure-spa-semi-permanent/',
             'pedicure-gel-acrylique': 'https://meet.brevo.com/institut-lynebeauty/pedicure-pedicure-spa-simple-copy',
             'vernis-semi-permanent-mains': 'https://meet.brevo.com/institut-lynebeauty/pedicure-vernis-semi-permanent-pieds-45-chf',
-
 
             // COIFFURE
             'barrels-twists': 'https://meet.brevo.com/institut-lynebeauty/coiffure-barrels-twists-fribourg-des-100-chf',
@@ -583,10 +540,12 @@
             <li><a href="#le-salon">Le Salon</a></li>
             <li><a href="#contact">Contact</a></li>
 
-            <li class="mobile-cta-wrapper"><a href="#" class="btn btn-primary" onclick="document.getElementById('burger').click(); reserverSoin('general'); return false;">Réserver ma parenthèse</a></li>
+            <li class="mobile-cta-wrapper">
+                <a href="https://lynebeauty.ch/" class="btn btn-primary" onclick="document.getElementById('burger').click(); reserverSoin('general'); return false;">Réserver ma parenthèse</a>
+            </li>
         </ul>
 
-        <a href="#" onclick="reserverSoin('general'); return false;" class="nav-cta">Réserver</a>
+        <a href="https://lynebeauty.ch/" onclick="reserverSoin('general'); return false;" class="nav-cta">Réserver</a>
 
         <button class="burger" id="burger" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -594,13 +553,16 @@
     </div>
 </nav>
 
+<!-- DÉBUT DU CONTENU PRINCIPAL POUR L'ACCESSIBILITÉ ET LE SEO -->
+<main>
+
 <section class="hero" id="top">
     <div class="hero-content">
         <span class="eyebrow hero-eyebrow">Institut · Fribourg</span>
         <h1>Votre <em>parenthèse de sérénité</em> au cœur de Fribourg</h1>
-        <h2>Franchissez le seuil de mon boudoir. Jocelyne signe chaque pose, chaque tresse et chaque soin avec la précision d'une orfèvre et la chaleur d'une confidente.</h2>
+        <h2>Franchissez le seuil de mon boudoir. Jocelyne signe chaque <a href="#onglerie" class="text-link">pose</a>, chaque <a href="#coiffure" class="text-link">tresse</a> et chaque <a href="#pedicure" class="text-link">soin</a> avec la précision d'une orfèvre et la chaleur d'une confidente.</h2>
         <div class="hero-ctas">
-            <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">
+            <a href="https://lynebeauty.ch/" onclick="reserverSoin('general'); return false;" class="btn btn-primary">
                 Réserver votre instant <span class="arrow"></span>
             </a>
             <a href="#universes" class="btn btn-ghost">Découvrir mes rituels</a>
@@ -630,7 +592,7 @@
         <div class="universes-header reveal">
             <span class="eyebrow">Vos instants sur-mesure</span>
             <h2 class="section-title">Mes Rituels <em>signature</em></h2>
-            <p>Je vous invite à découvrir une maîtrise globale de votre bien-être : l'art délicat de l'onglerie, le soin profond de la pédicure et la virtuosité de la coiffure. Une triple expertise, pour une sérénité totale.</p>
+            <p>Je vous invite à découvrir une maîtrise globale de votre bien-être : l'art délicat de l'<a href="#onglerie" class="text-link" style="color:var(--bg-warm);">onglerie</a>, le soin profond de la <a href="#pedicure" class="text-link" style="color:var(--bg-warm);">pédicure</a> et la virtuosité de la <a href="#coiffure" class="text-link" style="color:var(--bg-warm);">coiffure</a>. Une triple expertise, pour une sérénité totale.</p>
         </div>
 
         <div class="universes-grid">
@@ -689,7 +651,7 @@
                 <span class="eyebrow">L'Élégance · Pose & Nail Art</span>
                 <h2>Sublimez vos mains avec<br>une signature qui <em>dure.</em></h2>
                 <p class="lead">Le luxe du gain de temps : vos mains restent impeccables pendant des semaines. Fini les retouches quotidiennes, vous vous réveillez déjà prête, avec une confiance absolue.</p>
-                <p>Dans mon écrin, je ne fais pas simplement les ongles. Je compose. Pose gel, acrylique, semi-permanent ou nail art : chaque technique est exécutée avec la rigueur d'une joaillière et la patience d'une miniaturiste, dans le plus profond respect de votre ongle naturel. Vous repartirez avec des mains qui parlent pour vous.</p>
+                <p>Dans mon <a href="#le-salon" class="text-link">écrin</a>, je ne fais pas simplement les ongles. Je compose. Pose gel, acrylique, semi-permanent ou nail art : chaque technique est exécutée avec la rigueur d'une joaillière et la patience d'une miniaturiste, dans le plus profond respect de votre ongle naturel. Vous repartirez avec des mains qui parlent pour vous.</p>
                 <ul class="service-steps">
                     <li><strong>1. Le Diagnostic :</strong> J'analyse la nature de votre ongle pour choisir la technique idéale.</li>
                     <li><strong>2. Le Soin Signature :</strong> Une pose exécutée avec des produits haut de gamme et la précision d'une orfèvre.</li>
@@ -785,11 +747,12 @@
                 </div>
             </div>
             <div class="service-cta">
-                <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
+                <a href="https://lynebeauty.ch/" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
                 <button class="btn btn-ghost" onclick="openModal('modal-onglerie')">En découvrir davantage</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="service-detail alt" id="pedicure" style="background: var(--bg-pure);">
     <div class="container">
@@ -806,7 +769,7 @@
                 <span class="eyebrow">La Douceur · Pédicure Spa Fribourg</span>
                 <h2>Lâchez prise. Je prends<br>soin de <em>chaque détail.</em></h2>
                 <p class="lead">Le luxe du gain de temps : une mise en beauté des pieds qui dure, pour un sentiment de pureté et de perfection à chaque instant.</p>
-                <p>Vos pieds vous portent chaque jour ; ils méritent ma plus belle attention. Je prends le temps de les préparer avec minutie, de les hydrater en profondeur, et de libérer vos tensions par un modelage doux. Que vous optiez pour la robustesse du gel, l'éclat d'un vernis semi-permanent, ou simplement une Pédicure Spa, vous repartirez avec une sensation de légèreté absolue.</p>
+                <p>Vos pieds vous portent chaque jour ; ils méritent ma plus belle attention. Je prends le temps de les préparer avec minutie, de les hydrater en profondeur, et de libérer vos tensions par un modelage doux. Que vous optiez pour la robustesse du gel, l'éclat d'un vernis semi-permanent, ou simplement une <a href="#universes" class="text-link">Pédicure Spa</a>, vous repartirez avec une sensation de légèreté absolue.</p>
                 <ul class="service-steps">
                     <li><strong>1. Le Diagnostic :</strong> Écoute bienveillante de vos besoins (hydratation, callosités, esthétique).</li>
                     <li><strong>2. Le Soin Signature :</strong> Pédicure spa avec gommage, massage relaxant et produits premiums.</li>
@@ -815,67 +778,67 @@
             </div>
         </div>
 
-                <div class="pricing-block reveal">
-                    <div class="pricing-header">
-                        <h3>Prestations Pédicure Spa</h3>
-                        <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
-                    </div>
-                    <div class="pricing-grid">
-                        <div class="price-row" onclick="reserverSoin('vernis-semi-permanent-pieds')">
-                            <div class="name">Vernis semi-permanent<small>~ 40 min</small></div>
-                            <div class="dots"></div>
-                            <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                        </div>
-                        <div class="price-row" onclick="reserverSoin('gel-acrylique-pieds')">
-                            <div class="name">Gel ou acrylique<small>~ 55 min</small></div>
-                            <div class="dots"></div>
-                            <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                        </div>
-                        <div class="price-row" onclick="reserverSoin('pedicure-spa-simple')">
-                            <div class="name">Pédicure spa<small>Avec gommage & massage ~ 40 min</small></div>
-                            <div class="dots"></div>
-                            <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                        </div>
-                        <div class="price-row" onclick="reserverSoin('pedicure-spa-semi-permanent')">
-                            <div class="name">Pédicure spa + Semi-permanent<small>Avec gommage & massage ~ 60 min</small></div>
-                            <div class="dots"></div>
-                            <div class="price">90.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                        </div>
-                        <div class="price-row" onclick="reserverSoin('pedicure-gel-acrylique')">
-                            <div class="name">Pédicure spa + Gel / Acrylique<small>Avec gommage & massage ~ 1h15 min</small></div>
-                            <div class="dots"></div>
-                            <div class="price">110.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                        </div>
+        <div class="pricing-block reveal">
+            <div class="pricing-header">
+                <h3>Prestations Pédicure Spa</h3>
+                <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-row" onclick="reserverSoin('vernis-semi-permanent-pieds')">
+                    <div class="name">Vernis semi-permanent<small>~ 40 min</small></div>
+                    <div class="dots"></div>
+                    <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" onclick="reserverSoin('gel-acrylique-pieds')">
+                    <div class="name">Gel ou acrylique<small>~ 55 min</small></div>
+                    <div class="dots"></div>
+                    <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" onclick="reserverSoin('pedicure-spa-simple')">
+                    <div class="name">Pédicure spa<small>Avec gommage & massage ~ 40 min</small></div>
+                    <div class="dots"></div>
+                    <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" onclick="reserverSoin('pedicure-spa-semi-permanent')">
+                    <div class="name">Pédicure spa + Semi-permanent<small>Avec gommage & massage ~ 60 min</small></div>
+                    <div class="dots"></div>
+                    <div class="price">90.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" onclick="reserverSoin('pedicure-gel-acrylique')">
+                    <div class="name">Pédicure spa + Gel / Acrylique<small>Avec gommage & massage ~ 1h15 min</small></div>
+                    <div class="dots"></div>
+                    <div class="price">110.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
 
-                        <div class="pricing-subtitle">Suppléments & Retraits</div>
-                        <div class="price-row" onclick="reserverSoin('supplement-longueur-pieds')">
-                            <div class="name">Pour plus de longueur</div>
-                            <div class="dots"></div>
-                            <div class="price">dès 15.—</div>
-                        </div>
-                        <div class="price-row" onclick="reserverSoin('french-nail-art-pieds')">
-                            <div class="name">French / Nail Art</div>
-                            <div class="dots"></div>
-                            <div class="price">dès 10.—</div>
-                        </div>
-                        <div class="price-row" onclick="reserverSoin('retrait-semi-permanent-pieds')">
-                            <div class="name">Retrait vernis semi-permanent</div>
-                            <div class="dots"></div>
-                            <div class="price">15.—</div>
-                        </div>
-                        <div class="price-row" onclick="reserverSoin('retrait-gel-acrylique-pieds')">
-                            <div class="name">Retrait gel ou acrylique</div>
-                            <div class="dots"></div>
-                            <div class="price">25.—</div>
-                        </div>
-                    </div>
-                    <div class="service-cta">
-                        <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
-                        <button class="btn btn-ghost" onclick="openModal('modal-pedicure')">En découvrir davantage</button>
-                    </div>
+                <div class="pricing-subtitle">Suppléments & Retraits</div>
+                <div class="price-row" onclick="reserverSoin('supplement-longueur-pieds')">
+                    <div class="name">Pour plus de longueur</div>
+                    <div class="dots"></div>
+                    <div class="price">dès 15.—</div>
+                </div>
+                <div class="price-row" onclick="reserverSoin('french-nail-art-pieds')">
+                    <div class="name">French / Nail Art</div>
+                    <div class="dots"></div>
+                    <div class="price">dès 10.—</div>
+                </div>
+                <div class="price-row" onclick="reserverSoin('retrait-semi-permanent-pieds')">
+                    <div class="name">Retrait vernis semi-permanent</div>
+                    <div class="dots"></div>
+                    <div class="price">15.—</div>
+                </div>
+                <div class="price-row" onclick="reserverSoin('retrait-gel-acrylique-pieds')">
+                    <div class="name">Retrait gel ou acrylique</div>
+                    <div class="dots"></div>
+                    <div class="price">25.—</div>
                 </div>
             </div>
-        </section>
+            <div class="service-cta">
+                <a href="https://lynebeauty.ch/" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
+                <button class="btn btn-ghost" onclick="openModal('modal-pedicure')">En découvrir davantage</button>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="service-detail" id="coiffure">
     <div class="container">
@@ -899,7 +862,7 @@
                 <span class="eyebrow">La Couronne · Coiffure Afro & Classique</span>
                 <h2>Révélez votre nature,<br>en toute <em>confiance.</em></h2>
                 <p class="lead">Le luxe du gain de temps : une coiffure protectrice, un tissage ou un lissage parfaitement exécuté vous libère l'esprit. Vous êtes prête à conquérir votre journée.</p>
-                <p>Dans mon atelier, la coiffure est avant tout un échange. Je vous écoute, j'analyse avec bienveillance la nature de vos cheveux, et nous décidons ensemble de ce qui vous sublimera le mieux.</p>
+                <p>Dans mon atelier, la coiffure est avant tout un échange. Je vous écoute, j'analyse avec bienveillance la nature de vos cheveux, et nous décidons ensemble de ce qui vous sublimera le mieux. Découvrez l'atmosphère de mon <a href="#le-salon" class="text-link">salon dédié</a>.</p>
                 <ul class="service-steps">
                     <li><strong>1. Le Diagnostic :</strong> Étude de votre cuir chevelu et de la texture de vos cheveux.</li>
                     <li><strong>2. Le Soin Signature :</strong> Exécution minutieuse sans douleur, avec des mèches et produits de haute qualité.</li>
@@ -1006,7 +969,7 @@
                 </div>
             </div>
             <div class="service-cta">
-                <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
+                <a href="https://lynebeauty.ch/" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
                 <button class="btn btn-ghost" onclick="openModal('modal-coiffure')">En découvrir davantage</button>
             </div>
         </div>
@@ -1020,8 +983,8 @@
                 <span class="eyebrow">L'Institut · La Confidente</span>
                 <h2 class="section-title">Jocelyne, l'artisan de votre <em>beauté.</em></h2>
                 <p class="lead">Plus qu'un institut, je vous ouvre les portes d'un lieu où le geste est sûr, l'écoute attentive, et le sourire sincère.</p>
-                <p>Mon parcours de 18 ans témoigne de cette quête d'excellence : <strong>2 années de formation certifiée</strong> (incluant un certificat anglais en pédicure), <strong>7 ans dédiés à sublimer vos ongles</strong>, et <strong>11 ans d'expertise dans l'art de la coiffure afro</strong>.</p>
-                <p>Mon secret de fabrication ? L'alliance d'une élégance intemporelle et de l'utilisation exclusive de produits haut de gamme. Mais au-delà de la technique, mon obsession absolue est votre bien-être : ma plus belle réussite est de m'assurer que vous ressortiez de l'institut avec le sourire aux lèvres.</p>
+                <p>Mon parcours de 18 ans témoigne de cette quête d'excellence : <strong>2 années de formation certifiée</strong> (incluant un certificat anglais en pédicure), <strong>7 ans dédiés à sublimer vos <a href="#onglerie" class="text-link">ongles</a></strong>, et <strong>11 ans d'expertise dans l'art de la <a href="#coiffure" class="text-link">coiffure afro</a></strong>.</p>
+                <p>Mon secret de fabrication ? L'alliance d'une élégance intemporelle et de l'utilisation exclusive de produits haut de gamme. Mais au-delà de la technique, mon obsession absolue est votre bien-être : ma plus belle réussite est de m'assurer que vous ressortiez de l'institut avec le sourire aux lèvres. Découvrez toutes les réponses à vos doutes dans <a href="#faq" class="text-link">mes questions fréquentes</a>.</p>
                 <div class="signature">— Jocelyne</div>
 
                 <div class="about-stats">
@@ -1072,7 +1035,7 @@
 
                 <p class="lead">L'Institut Lyne Beauty a été conçu pour vous offrir bien plus qu'une simple prestation esthétique : c'est une parenthèse hors du temps. Dans une atmosphère chaleureuse aux nuances poudrées, chaque détail de décoration et d'aménagement a été pensé pour votre confort absolu.</p>
 
-                <p>De mes postes de coiffure baignés de lumière à mes fauteuils de pédicure spa massants, l'espace allie équipements de pointe et ambiance relaxante. Que ce soit pour une pose rapide ou une transformation complète de plusieurs heures, vous êtes ici chez vous. Asseyez-vous, détendez-vous, je m'occupe de tout.</p>
+                <p>De mes postes de <a href="#coiffure" class="text-link">coiffure</a> baignés de lumière à mes fauteuils de <a href="#pedicure" class="text-link">pédicure spa</a> massants, l'espace allie équipements de pointe et ambiance relaxante. Que ce soit pour une pose rapide ou une transformation complète de plusieurs heures, vous êtes ici chez vous. Asseyez-vous, détendez-vous, je m'occupe de tout.</p>
             </div>
 
         </div>
@@ -1089,7 +1052,7 @@
                 <span>La confiance récompensée à Fribourg</span>
             </div>
             <div style="margin-top: 10px;">
-                <a href="https://www.google.com/search?sca_esv=b8c2a88c761a13ca&sxsrf=ANbL-n6RlqX-nNSZNxbETR1VS_KLm5iKhw:1778236489047&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWduoA-o-svSBlsxOh2NpDxdCddpYxmLF1NEp2KzsZQt8kXPw4K99Cp_NuXruKSj4-JIZCoo0GQHhx03RKHLwyMT-Ml_2PIo0MLn6sp7UkDNYbID26obZDtLYhtkKLdYwFPTTlc%3D&q=Institut+Lyne+Beauty+Onglerie+%26+Coiffeur+Avis&sa=X&ved=2ahUKEwjNl4aSv6mUAxXbVqQEHeKbPWsQ0bkNegQIKxAF&biw=1440&bih=778&dpr=2&zx=1778236697262" target="_blank" rel="noopener" class="reviews-google-link">Rédiger un avis</a><br>
+                <a href="https://www.google.com/search?sca_esv=b8c2a88c761a13ca&sxsrf=ANbL-n6RlqX-nNSZNxbETR1VS_KLm5iKhw:1778236489047&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWduoA-o-svSBlsxOh2NpDxdCddpYxmLF1NEp2KzsZQt8kXPw4K99Cp_NuXruKSj4-JIZCoo0GQHhx03RKHLwyMT-Ml_2PIo0MLn6sp7UkDNYbID26obZDtLYhtkKLdYwFPTTlc%3D&q=Institut+Lyne+Beauty+Onglerie+%26+Coiffeur+Avis&sa=X&ved=2ahUKEwjNl4aSv6mUAxXbVqQEHeKbPWsQ0bkNegQIKxAF&biw=1440&bih=778&dpr=2&zx=1778236697262" target="_blank" rel="noopener" class="reviews-google-link text-link" style="color:var(--bg-pure); border-color:var(--bg-pure);">Rédiger un avis</a><br>
             </div>
             <br>
 
@@ -1135,7 +1098,7 @@
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"J'ai eu une expérience incroyable dans ce salon de manucure. Le personnel était très aimable et attentionné, l'ambiance était très relaxante, et le résultat final a dépassé mes attentes. Je le recommande sans hésiter à tous ceux qui recherchent un service de qualité et un moment de détente."</p>
+                            <p class="review-text">"J'ai eu une expérience incroyable dans ce salon de manucure. Le personnel était très aimable et attentionné, l'ambiance était très relaxante, et le résultat final a dépassé mes attentes."</p>
                             <div class="review-author">
                                 <div class="review-avatar">R</div>
                                 <div class="review-meta">
@@ -1160,7 +1123,7 @@
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"J'ai passé un très bon moment et je suis ressortie de son institut avec une superbe manucure ! Jocelyne est très sympathique et fait attention aux détails. Je recommande vivement. et ne déçoit jamais. Je vous recommande d'aller visiter son salon!"</p>
+                            <p class="review-text">"J'ai passé un très bon moment et je suis ressortie de son institut avec une superbe manucure ! Jocelyne est très sympathique et fait attention aux détails. Je recommande vivement."</p>
                             <div class="review-author">
                                 <div class="review-avatar">A</div>
                                 <div class="review-meta">
@@ -1196,123 +1159,15 @@
                         </div>
                     </div>
 
-                    <div class="review-slide">
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Mes tresses plaquées sont magnifiques, tenue parfaite. Jocelyne a la main légère et un vrai œil. L'ambiance du salon est cocooning, on s'y sent comme chez une amie."</p>
-                            <div class="review-author">
-                                <div class="review-avatar">A</div>
-                                <div class="review-meta">
-                                    <strong>Aïssatou D.</strong>
-                                    <span>Tresses plaquées</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"J'ai testé le combo pédicure spa + semi-permanent : un pur moment de douceur. Le rendu est sublime et la tenue dépasse mes attentes. Bravo Jocelyne."</p>
-                            <div class="review-author">
-                                <div class="review-avatar">S</div>
-                                <div class="review-meta">
-                                    <strong>Sophie M.</strong>
-                                    <span>Pédicure Spa</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-slide">
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Mon tissage est parfait, naturel, exactement ce que j'avais demandé. Jocelyne maîtrise son art et le salon est ultra propre. Je recommande sans hésiter."</p>
-                            <div class="review-author">
-                                <div class="review-avatar">M</div>
-                                <div class="review-meta">
-                                    <strong>Mariama K.</strong>
-                                    <span>Tissage complet</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Première pose acrylique, j'avais des appréhensions. Jocelyne a été d'une douceur et d'une pédagogie remarquables. Résultat : des ongles longs, élégants, ultra solides."</p>
-                            <div class="review-author">
-                                <div class="review-avatar">L</div>
-                                <div class="review-meta">
-                                    <strong>Léa B.</strong>
-                                    <span>Première pose acrylique</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-slide">
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Coloration racines impeccable, ma teinte naturelle parfaitement raccord. Et l'ambiance Boudoir est juste à tomber. Mon adresse Fribourg attitrée désormais."</p>
-                            <div class="review-author">
-                                <div class="review-avatar">N</div>
-                                <div class="review-meta">
-                                    <strong>Nadia F.</strong>
-                                    <span>Coloration racines</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Un nail art floral d'une finesse incroyable. Jocelyne a une vraie patte d'artiste. Toutes mes copines me demandent qui me les fait. Je garde le secret… ou presque !"</p>
-                            <div class="review-author">
-                                <div class="review-avatar">É</div>
-                                <div class="review-meta">
-                                    <strong>Élodie V.</strong>
-                                    <span>Nail Art floral</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-slide">
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Tresses rasta nickel, tenue trois mois sans frisotis. Pour un homme c'est rare de trouver quelqu'un qui prend le temps. Top à tous les niveaux."</p>
-                            <div class="review-author">
-                                <div class="review-avatar">D</div>
-                                <div class="review-meta">
-                                    <strong>David O.</strong>
-                                    <span>Tresses rasta</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Un service de pédicure spa exceptionnel à Fribourg. Mes pieds n'ont jamais été aussi doux. Le vernis semi-permanent tient parfaitement. Le cadre est vraiment relaxant !"</p>
-                            <div class="review-author">
-                                <div class="review-avatar">C</div>
-                                <div class="review-meta">
-                                    <strong>Chloé T.</strong>
-                                    <span>Pédicure Spa & Vernis</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-slide">
-                        <div class="review-card">
-                            <div class="review-stars">★ ★ ★ ★ ★</div>
-                            <p class="review-text">"Le meilleur salon pour des tresses africaines sur Fribourg. Jocelyne est à l'écoute, ne serre pas trop et le résultat est juste incroyable. Une vraie perle !"</p>
-                            <div class="review-author">
-                                <div class="review-avatar">S</div>
-                                <div class="review-meta">
-                                    <strong>Sarah M.</strong>
-                                    <span>Tresses avec extensions</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> </div> <div class="reviews-dots" id="reviewsDots"></div>
+                </div>
+                <div class="reviews-dots" id="reviewsDots"></div>
                 <button class="review-arrow prev" onclick="prevSlide()" aria-label="Avis précédent">❮</button>
                 <button class="review-arrow next" onclick="nextSlide()" aria-label="Avis suivant">❯</button>
+            </div>
+        </div>
+    </div>
+</section>
 
-            </div> </div> </div> </section>
 <section class="gallery">
     <div class="container">
         <div class="gallery-header reveal">
@@ -1320,7 +1175,7 @@
                 <span class="eyebrow">@lynebeauty18</span>
                 <h2>Laissez-vous <em>inspirer</em>.</h2>
             </div>
-            <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener" class="gallery-handle">Me rejoindre sur Instagram →</a>
+            <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener" class="gallery-handle text-link">Me rejoindre sur Instagram →</a>
         </div>
 
         <div class="gallery-grid reveal">
@@ -1348,30 +1203,6 @@
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </div>
             </a>
-            <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener">
-                <img src="img/coiffure4.webp" alt="Réalisations coiffure et tresses Lyne Beauty Fribourg" loading="lazy" />
-                <div class="insta-overlay">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </div>
-            </a>
-            <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener">
-                <img src="img/feed6-onglerie.webp" alt="Réalisations coiffure et tresses Lyne Beauty Fribourg" loading="lazy" />
-                <div class="insta-overlay">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </div>
-            </a>
-            <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener">
-                <img src="img/tresse-homme.webp" alt="Réalisations coiffure et tresses Lyne Beauty Fribourg" loading="lazy" />
-                <div class="insta-overlay">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </div>
-            </a>
-            <a href="https://www.instagram.com/lynebeauty18/" target="_blank" rel="noopener">
-                <img src="img/prothesie-blanc.webp" alt="Réalisations coiffure et tresses Lyne Beauty Fribourg" loading="lazy" />
-                <div class="insta-overlay">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </div>
-            </a>
         </div>
     </div>
 </section>
@@ -1382,7 +1213,7 @@
             <aside class="faq-aside reveal">
                 <span class="eyebrow">Questions Douces</span>
                 <h2 class="section-title">Votre sérénité,<br>avant de <em>franchir la porte.</em></h2>
-                <p>J'ai rassemblé ici de quoi apaiser toutes vos interrogations sur mes rituels, mes tarifs et mon fonctionnement.</p>
+                <p>J'ai rassemblé ici de quoi apaiser toutes vos interrogations sur mes rituels, mes tarifs et mon fonctionnement. Si vous avez d'autres doutes, n'hésitez pas à me contacter via mes <a href="#contact" class="text-link">coordonnées</a>.</p>
                 <a href="https://wa.me/41779986426?text=Bonjour%2C%20je%20viens%20du%20site%20internet.%20Je%20souhaite%20vous%20poser%20une%20question%20sur%20%3A%20" target="_blank" rel="noopener" class="btn btn-primary">M'écrire directement <span class="arrow"></span></a>
             </aside>
             <div class="faq-list reveal">
@@ -1392,7 +1223,7 @@
                         <span class="faq-toggle"></span>
                     </button>
                     <div class="faq-answer">
-                        <p>Je travaille seule pour vous offer un moment de détente exclusif. Privilégiant toujours le soin en cours et le bien-être de la cliente présente, je ne peux pas toujours répondre au téléphone dans l'immédiat. <strong>La réservation en ligne est le moyen le plus sûr et rapide</strong> pour bloquer votre instant sans attendre de réponse humaine.</p>
+                        <p>Je travaille seule pour vous offrir un moment de détente exclusif. Privilégiant toujours le soin en cours et le bien-être de la cliente présente, je ne peux pas toujours répondre au téléphone dans l'immédiat. <strong>La réservation en ligne est le moyen le plus sûr et rapide</strong> pour bloquer votre instant sans attendre de réponse humaine.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1410,7 +1241,7 @@
                         <span class="faq-toggle"></span>
                     </button>
                     <div class="faq-answer">
-                        <p>L'Institut Lyne Beauty propose deux univers complets à Fribourg : <strong>l'onglerie</strong> (pose de gel, acrylique, vernis semi-permanent, pédicure spa, nail art) et <strong>la coiffure</strong> (tresses afro, draid, rasta, tissages, colorations, brushing, défrisage, coupe). Une expertise rare réunie dans un seul lieu (Boudoir Chic).</p>
+                        <p>L'Institut Lyne Beauty propose deux univers complets à Fribourg : l'<a href="#onglerie" class="text-link">onglerie</a> (pose de gel, acrylique, vernis semi-permanent, pédicure spa, nail art) et la <a href="#coiffure" class="text-link">coiffure</a> (tresses afro, draid, rasta, tissages, colorations, brushing, défrisage, coupe). Une expertise rare réunie dans un seul lieu (Boudoir Chic).</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1419,7 +1250,7 @@
                         <span class="faq-toggle"></span>
                     </button>
                     <div class="faq-answer">
-                        <p>L'Institut Lyne Beauty est situé au cœur de Fribourg, dans la vieille ville. Le salon est à 1 minute de l'arrêt du bus Bourg (lignes 2 et 6) et à 5 minutes à pied de la cathédrale Saint-Nicolas.</p>
+                        <p>L'Institut Lyne Beauty est situé au cœur de Fribourg, dans la vieille ville. Le <a href="#contact" class="text-link">salon</a> est à 1 minute de l'arrêt du bus Bourg (lignes 2 et 6) et à 5 minutes à pied de la cathédrale Saint-Nicolas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1446,7 +1277,7 @@
                 <p style="color: var(--ink-soft); max-width: 500px; margin: 0 auto;">Sélectionnez votre rituel et choisissez l'horaire qui vous convient. Notre agenda en ligne est disponible 24h/24.</p>
             </div>
 
-            <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary" style="font-size: 16px; padding: 24px 48px;">
+            <a href="https://lynebeauty.ch/" onclick="reserverSoin('general'); return false;" class="btn btn-primary" style="font-size: 16px; padding: 24px 48px;">
                 Ouvrir l'agenda de l'institut <span class="arrow"></span>
             </a>
 
@@ -1496,7 +1327,11 @@
             <div class="contact-hours reveal">
                 <h3>Horaires du boudoir</h3>
                 <div class="hours-row">
-                    <span class="day">Lundi au Vendredi</span>
+                    <span class="day">Lundi</span>
+                    <span class="time">14:00 — 19:00</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Mardi au Vendredi</span>
                     <span class="time">09:00 — 19:00</span>
                 </div>
                 <div class="hours-row">
@@ -1505,9 +1340,9 @@
                 </div>
                 <div class="hours-row closed">
                     <span class="day">Dimanche</span>
-                    <span class="time">Repos</span>
+                    <span class="time">Fermé</span>
                 </div>
-                <p style="font-size:12px; color:var(--ink-mute); margin-top:16px; letter-spacing:0.04em;">* Pause déjeuner Lun-Ven : 12:00 — 13:00</p>
+                <p style="font-size:12px; color:var(--ink-mute); margin-top:16px; letter-spacing:0.04em;">* Pause déjeuner Mar-Ven : 12:00 — 13:00</p>
             </div>
         </div>
 
@@ -1520,6 +1355,9 @@
         </div>
     </div>
 </section>
+
+</main>
+<!-- FIN DU CONTENU PRINCIPAL -->
 
 <footer>
     <div class="container">
@@ -1540,9 +1378,9 @@
                 <ul>
                     <li><a href="#onglerie">Onglerie Signature</a></li>
                     <li><a href="#pedicure">Beauté des pieds</a></li>
-                    <li><a href="javascript:void(0)" onclick="openModal('modal-onglerie')">Expertise Onglerie</a></li>
-                    <li><a href="javascript:void(0)" onclick="openModal('modal-pedicure')">Expertise Pédicure</a></li>
-                    <li><a href="javascript:void(0)" onclick="openModal('modal-blog')">Conseils beauté</a></li>
+                    <li><a href="https://lynebeauty.ch/" onclick="openModal('modal-onglerie'); return false;">Expertise Onglerie</a></li>
+                    <li><a href="https://lynebeauty.ch/" onclick="openModal('modal-pedicure'); return false;">Expertise Pédicure</a></li>
+                    <li><a href="https://lynebeauty.ch/" onclick="openModal('modal-coiffure'); return false;">Expertise Coiffure</a></li>
                 </ul>
             </div>
             <div>
@@ -1551,13 +1389,14 @@
                     <li><a href="#about">L'Écrin</a></li>
                     <li><a href="#faq">Questions Douces</a></li>
                     <li><a href="#contact">Me Trouver</a></li>
-                    <li><a href="#" onclick="reserverSoin('general'); return false;">Réserver ma parenthèse</a></li>
+                    <li><a href="https://lynebeauty.ch/" onclick="reserverSoin('general'); return false;">Réserver ma parenthèse</a></li>
                 </ul>
             </div>
             <div>
                 <h4>Me Trouver</h4>
                 <ul>
-                    <li>Vielle-ville de Fribourg</li>
+                    <li>Institut Lyne Beauty</li>
+                    <li>Rue de Zaehringen 4</li>
                     <li>1700 Fribourg</li>
                     <li><a href="tel:+41779986426">+41 77 998 64 26</a></li>
                     <li><a href="https://wa.me/41779986426?text=Bonjour%2C%20je%20viens%20du%20site%20internet.%20Je%20souhaite%20vous%20poser%20une%20question%20sur%20%3A%20" target="_blank" rel="noopener">WhatsApp</a></li>
@@ -1565,10 +1404,10 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2026 Institut Lyne Beauty · Tous droits réservés</span>
+            <span>© 2026 Institut Lyne Beauty Onglerie & Coiffeur · Tous droits réservés</span>
             <div>
-                <a href="javascript:void(0)" onclick="openModal('modal-mentions')" rel="nofollow" style="color: inherit; text-decoration: underline; margin-right: 15px;">Impressum & Mentions Légales</a>
-                <span>Onglerie & Coiffure · Fribourg</span>
+                <a href="https://lynebeauty.ch/" onclick="openModal('modal-mentions'); return false;" rel="nofollow" style="color: inherit; text-decoration: underline; margin-right: 15px;">Impressum & Mentions Légales</a>
+                <span>Fribourg, Suisse</span>
             </div>
         </div>
     </div>
@@ -1588,7 +1427,7 @@
         <p><strong>Boue Espe Martinez Lou Bonan Jesseline</strong></p>
 
         <h3 style="margin-top:20px; font-size:18px;">Informations de l'entreprise :</h3>
-        <p>Institut Lyne Beauty<br>
+        <p>Institut Lyne Beauty Onglerie & Coiffeur<br>
             Rue de Zaehringen 4<br>
             1700 Fribourg, Suisse</p>
 
@@ -1753,16 +1592,13 @@
        FILTRES ONGLERIE
        ============================================ */
     window.filtrerOnglerie = function(categorie, event) {
-        // Mettre à jour l'état actif des boutons dans l'onglerie
         const boutons = document.querySelectorAll('#onglerie .filter-btn');
         boutons.forEach(btn => btn.classList.remove('active'));
         event.target.classList.add('active');
 
-        // Filtrer les lignes de prix
         const lignes = document.querySelectorAll('#onglerie-grid .price-row, #onglerie-grid .pricing-subtitle');
         lignes.forEach(ligne => {
             const cat = ligne.getAttribute('data-category');
-            // Affiche si c'est la catégorie demandée, ou si c'est un supplément universel ("all")
             if (categorie === 'all' || cat === categorie || cat === 'all') {
                 ligne.classList.remove('hidden');
             } else {
@@ -1831,12 +1667,10 @@
        FILTRES COIFFURE
        ============================================ */
     window.filtrerCoiffure = function(categorie) {
-        // Mettre à jour l'état actif des boutons
         const boutons = document.querySelectorAll('.filter-btn');
         boutons.forEach(btn => btn.classList.remove('active'));
         event.target.classList.add('active');
 
-        // Filtrer les lignes de prix
         const lignes = document.querySelectorAll('#coiffure-grid .price-row');
         lignes.forEach(ligne => {
             if (categorie === 'all' || ligne.getAttribute('data-category') === categorie) {
@@ -1846,7 +1680,6 @@
             }
         });
     };
-
 </script>
 </body>
 </html>
