@@ -179,35 +179,35 @@
         .service-text .lead { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 24px; }
         .service-text p { font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 16px; }
 
-        .service-steps { 
-    margin-top: 24px; 
-    list-style: none; 
-    padding: 0; 
-}
+        .service-steps {
+            margin-top: 24px;
+            list-style: none;
+            padding: 0;
+        }
 
-        .service-steps li { 
-    font-size: 15px; 
-    color: var(--ink-soft); 
-    margin-bottom: 12px; 
-    line-height: 1.7; 
-    position: relative; /* Remplace le display: flex */
-    padding-left: 20px; /* Laisse de l'espace pour la puce à gauche */
-}
+        .service-steps li {
+            font-size: 15px;
+            color: var(--ink-soft);
+            margin-bottom: 12px;
+            line-height: 1.7;
+            position: relative; /* Remplace le display: flex */
+            padding-left: 20px; /* Laisse de l'espace pour la puce à gauche */
+        }
 
-        .service-steps li strong { 
-    color: var(--ink); 
-    font-weight: 500; 
-    margin-right: 5px; /* Petit espace entre le titre gras et le texte */
-}
+        .service-steps li strong {
+            color: var(--ink);
+            font-weight: 500;
+            margin-right: 5px; /* Petit espace entre le titre gras et le texte */
+        }
 
-        .service-steps li::before { 
-    content: '✦'; 
-    color: var(--signature); 
-    font-size: 12px; 
-    position: absolute; 
-    left: 0; 
-    top: 2px; /* Ajuste l'alignement vertical de l'étoile */
-}
+        .service-steps li::before {
+            content: '✦';
+            color: var(--signature);
+            font-size: 12px;
+            position: absolute;
+            left: 0;
+            top: 2px; /* Ajuste l'alignement vertical de l'étoile */
+        }
 
         .pricing-block { background: var(--bg-pure); border: 1px solid var(--line); border-top: 3px solid var(--signature); padding: 60px; border-radius: 8px; position: relative; }
         .service-detail.alt .pricing-block { background: var(--bg); }
@@ -216,7 +216,7 @@
         .pricing-note { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); }
 
         .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 60px; }
-        
+
         /* CSS SURVOL DE LIGNE (STEALTH LUXE) */
         .price-row { display: flex; align-items: baseline; padding: 18px 12px; border-bottom: 1px dotted var(--line); gap: 16px; transition: all var(--t-fast); border-radius: 6px; cursor: pointer; }
         .price-row:last-child { border-bottom: none; }
@@ -225,7 +225,7 @@
         .price-row .name small { font-family: var(--ff-body); font-size: 12px; font-weight: 300; color: var(--ink-mute); display: block; margin-top: 2px; }
         .price-row .dots { flex: 0 1 auto; border-bottom: 1px dotted var(--ink-mute); height: 1em; min-width: 20px; }
         .price-row .price { font-family: var(--ff-display); font-size: 22px; font-weight: 500; color: var(--signature); white-space: nowrap; display: flex; align-items: center; }
-        
+
         .service-cta { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
 
         /* ============================================
@@ -281,6 +281,17 @@
         /* ============================================
            AVIS
            ============================================ */
+
+        /* --- FILTRES COIFFURE --- */
+        .pricing-filters { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+        .filter-btn { padding: 10px 20px; border: 1px solid var(--line); border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--ink-soft); transition: all var(--t-fast); }
+        .filter-btn:hover { border-color: var(--signature); color: var(--signature); }
+        .filter-btn.active { background: var(--signature); border-color: var(--signature); color: var(--bg-pure); }
+        .price-row.hidden { display: none !important; }
+
+        /* --- SOUS-TITRES SUPPLÉMENTS --- */
+        .pricing-subtitle { grid-column: 1 / -1; font-family: var(--ff-display); font-style: italic; font-size: 22px; margin: 32px 0 16px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink); }
+
         .review-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; background: var(--bg-pure); color: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 10; transition: all var(--t-fast); box-shadow: var(--shadow-soft); cursor: pointer;}
         .review-arrow:hover { background: var(--signature); color: var(--bg-pure); }
         .review-arrow.prev { left: 10px; }
@@ -514,15 +525,22 @@
             'manucure-simple': 'https://meet.brevo.com/institut-lynebeauty/manucure-simple/',
             'vernis-semi-permanent-mains': 'https://meet.brevo.com/institut-lynebeauty/vernis-semi-permanent-mains/',
             'retrait-depose': 'https://meet.brevo.com/institut-lynebeauty/retrait-amp-depose-douce/',
-            
+
             // PÉDICURE
+            'gel-acrylique-pieds': 'https://meet.brevo.com/institut-lynebeauty/pedicure-gel-ou-acrylique-pieds',
             'pedicure-spa-simple': 'https://meet.brevo.com/institut-lynebeauty/onglerie-manucure-simple-copy',
             'pedicure-spa-semi-permanent': 'https://meet.brevo.com/institut-lynebeauty/pedicure-pedicure-spa-semi-permanent/',
             'pedicure-gel-acrylique': 'https://meet.brevo.com/institut-lynebeauty/pedicure-pedicure-spa-simple-copy',
             'vernis-semi-permanent-mains': 'https://meet.brevo.com/institut-lynebeauty/pedicure-vernis-semi-permanent-pieds-45-chf',
-            
-            
+
+
             // COIFFURE
+            'barrels-twists': 'https://meet.brevo.com/institut-lynebeauty/coiffure-barrels-twists-fribourg-des-100-chf',
+            'deux-tresses-sans': 'https://meet.brevo.com/institut-lynebeauty/coiffure-2-grandes-tresses-plaquees-sans-extension-des-45-chf',
+            'deux-tresses-ext': 'https://meet.brevo.com/institut-lynebeauty/coiffure-2-grandes-tresses-plaquees-sans-extension-des-45-chf-copie',
+            'couleur-racine': 'https://meet.brevo.com/institut-lynebeauty/coiffure-coloration-racines-fribourg-des-60-chf',
+            'brushing': 'https://meet.brevo.com/institut-lynebeauty/coiffure-brushing-des-50-chf',
+            'shampooing': 'https://meet.brevo.com/institut-lynebeauty/coiffure-shampooing-des-20-chf',
             'tresses-draid': 'https://meet.brevo.com/institut-lynebeauty/tresses-draid-avec-extensions/',
             'tresses-plaquees': 'https://meet.brevo.com/institut-lynebeauty/coiffure-tresses-plaquees/',
             'vanilles-twists': 'https://meet.brevo.com/institut-lynebeauty/coiffure-vanilles-ou-twists/',
@@ -685,46 +703,85 @@
                 <h3>Prestations Onglerie</h3>
                 <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
             </div>
-            <div class="pricing-grid">
-                <div class="price-row" onclick="reserverSoin('premiere-pose-gel')">
-                    <div class="name">Première pose Gel<small>Construction complète ~ 1h30 min</small></div>
+
+            <div class="pricing-filters">
+                <button class="filter-btn active" onclick="filtrerOnglerie('all', event)">Toutes les prestations</button>
+                <button class="filter-btn" onclick="filtrerOnglerie('gel', event)">Gel</button>
+                <button class="filter-btn" onclick="filtrerOnglerie('acrylique', event)">Acrylique</button>
+                <button class="filter-btn" onclick="filtrerOnglerie('classique', event)">Classique & Soins</button>
+            </div>
+
+            <div class="pricing-grid" id="onglerie-grid">
+                <div class="price-row" data-category="gel" onclick="reserverSoin('premiere-pose-gel')">
+                    <div class="name">Première pose Gel<small>~ 1h30 min</small></div>
                     <div class="dots"></div>
                     <div class="price">85.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('remplissage-gel-4-5-sem')">
-                    <div class="name">Remplissage Gel (4-5 sem.)<small>Entretien régulier ~ 60 min</small></div>
+                <div class="price-row" data-category="gel" onclick="reserverSoin('remplissage-gel-4-5-sem')">
+                    <div class="name">Remplissage Gel (4-5 sem.)<small>~ 60 min</small></div>
                     <div class="dots"></div>
                     <div class="price">65.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('remplissage-gel-tardif-6-sem')">
-                    <div class="name">Remplissage Gel (-6 sem.)<small>Entretien tardif ~ 1h20 min</small></div>
+                <div class="price-row" data-category="gel" onclick="reserverSoin('remplissage-gel-tardif-6-sem')">
+                    <div class="name">Remplissage Gel (-6 sem.)<small>~ 1h20 min</small></div>
                     <div class="dots"></div>
                     <div class="price">75.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('premiere-pose-acrylique')">
-                    <div class="name">Première pose Acrylique<small>Construction longue tenue ~ 1h20 min</small></div>
+
+                <div class="price-row" data-category="acrylique" onclick="reserverSoin('premiere-pose-acrylique')">
+                    <div class="name">Première pose Acrylique<small>~ 1h20 min</small></div>
                     <div class="dots"></div>
                     <div class="price">75.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('remplissage-acrylique-tardif-6-sem')">
-                    <div class="name">Remplissage Acrylique (-6 sem.)<small>Entretien tardif ~ 1h10 min</small></div>
+                <div class="price-row" data-category="acrylique" onclick="reserverSoin('remplissage-acrylique-4-5-sem')">
+                    <div class="name">Remplissage Acrylique (4-5 sem.)<small>~ 50 min</small></div>
+                    <div class="dots"></div>
+                    <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="acrylique" onclick="reserverSoin('remplissage-acrylique-tardif-6-sem')">
+                    <div class="name">Remplissage Acrylique (-6 sem.)<small>~ 1h10 min</small></div>
                     <div class="dots"></div>
                     <div class="price">70.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('manucure-simple')">
-                    <div class="name">Manucure simple<small>Soin de l'ongle naturel ~ 20 min</small></div>
+
+                <div class="price-row" data-category="classique" onclick="reserverSoin('manucure-simple')">
+                    <div class="name">Manucure simple<small>~ 20 min</small></div>
                     <div class="dots"></div>
                     <div class="price">30.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('vernis-semi-permanent-mains')">
-                    <div class="name">Vernis semi-permanent<small>Couleur longue durée ~ 40 min</small></div>
+                <div class="price-row" data-category="classique" onclick="reserverSoin('vernis-semi-permanent-mains')">
+                    <div class="name">Vernis semi-permanent<small>~ 40 min</small></div>
                     <div class="dots"></div>
                     <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('retrait-depose')">
-                    <div class="name">Retrait & Dépose douce<small>Soin professionnel respectueux</small></div>
+
+                <div class="pricing-subtitle" data-category="all">Suppléments & Retraits</div>
+
+                <div class="price-row" data-category="all" onclick="reserverSoin('supplement-longueur-gel')">
+                    <div class="name">Supplément longueur extrême<small>Sur demande (Gel ou Acrylique)</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 20.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                    <div class="price">+ 15.—</div>
+                </div>
+
+                <div class="price-row" data-category="all" onclick="reserverSoin('nail-art')">
+                    <div class="name">French, Baby-boomer, Nail Art</div>
+                    <div class="dots"></div>
+                    <div class="price">dès 15.—</div>
+                </div>
+                <div class="price-row" data-category="all" onclick="reserverSoin('reparation-ongle')">
+                    <div class="name">Réparation d'un ongle</div>
+                    <div class="dots"></div>
+                    <div class="price">10.—</div>
+                </div>
+                <div class="price-row" data-category="all" onclick="reserverSoin('retrait-acrylique-gel')">
+                    <div class="name">Retrait acrylique / gel</div>
+                    <div class="dots"></div>
+                    <div class="price">30.—</div>
+                </div>
+                <div class="price-row" data-category="all" onclick="reserverSoin('retrait-semi-permanent')">
+                    <div class="name">Retrait vernis semi-permanent</div>
+                    <div class="dots"></div>
+                    <div class="price">20.—</div>
                 </div>
             </div>
             <div class="service-cta">
@@ -732,8 +789,7 @@
                 <button class="btn btn-ghost" onclick="openModal('modal-onglerie')">En découvrir davantage</button>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <section class="service-detail alt" id="pedicure" style="background: var(--bg-pure);">
     <div class="container">
@@ -759,45 +815,67 @@
             </div>
         </div>
 
-        <div class="pricing-block reveal">
-            <div class="pricing-header">
-                <h3>Prestations Pédicure Spa</h3>
-                <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
+                <div class="pricing-block reveal">
+                    <div class="pricing-header">
+                        <h3>Prestations Pédicure Spa</h3>
+                        <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
+                    </div>
+                    <div class="pricing-grid">
+                        <div class="price-row" onclick="reserverSoin('vernis-semi-permanent-pieds')">
+                            <div class="name">Vernis semi-permanent<small>~ 40 min</small></div>
+                            <div class="dots"></div>
+                            <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                        </div>
+                        <div class="price-row" onclick="reserverSoin('gel-acrylique-pieds')">
+                            <div class="name">Gel ou acrylique<small>~ 55 min</small></div>
+                            <div class="dots"></div>
+                            <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                        </div>
+                        <div class="price-row" onclick="reserverSoin('pedicure-spa-simple')">
+                            <div class="name">Pédicure spa<small>Avec gommage & massage ~ 40 min</small></div>
+                            <div class="dots"></div>
+                            <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                        </div>
+                        <div class="price-row" onclick="reserverSoin('pedicure-spa-semi-permanent')">
+                            <div class="name">Pédicure spa + Semi-permanent<small>Avec gommage & massage ~ 60 min</small></div>
+                            <div class="dots"></div>
+                            <div class="price">90.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                        </div>
+                        <div class="price-row" onclick="reserverSoin('pedicure-gel-acrylique')">
+                            <div class="name">Pédicure spa + Gel / Acrylique<small>Avec gommage & massage ~ 1h15 min</small></div>
+                            <div class="dots"></div>
+                            <div class="price">110.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                        </div>
+
+                        <div class="pricing-subtitle">Suppléments & Retraits</div>
+                        <div class="price-row" onclick="reserverSoin('supplement-longueur-pieds')">
+                            <div class="name">Pour plus de longueur</div>
+                            <div class="dots"></div>
+                            <div class="price">dès 15.—</div>
+                        </div>
+                        <div class="price-row" onclick="reserverSoin('french-nail-art-pieds')">
+                            <div class="name">French / Nail Art</div>
+                            <div class="dots"></div>
+                            <div class="price">dès 10.—</div>
+                        </div>
+                        <div class="price-row" onclick="reserverSoin('retrait-semi-permanent-pieds')">
+                            <div class="name">Retrait vernis semi-permanent</div>
+                            <div class="dots"></div>
+                            <div class="price">15.—</div>
+                        </div>
+                        <div class="price-row" onclick="reserverSoin('retrait-gel-acrylique-pieds')">
+                            <div class="name">Retrait gel ou acrylique</div>
+                            <div class="dots"></div>
+                            <div class="price">25.—</div>
+                        </div>
+                    </div>
+                    <div class="service-cta">
+                        <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
+                        <button class="btn btn-ghost" onclick="openModal('modal-pedicure')">En découvrir davantage</button>
+                    </div>
+                </div>
             </div>
-            <div class="pricing-grid">
-                <div class="price-row" onclick="reserverSoin('pedicure-spa-simple')">
-                    <div class="name">Pédicure Spa<small>Avec gommage & massage relaxant ~ 40 min</small></div>
-                    <div class="dots"></div>
-                    <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                </div>
-                <div class="price-row" onclick="reserverSoin('vernis-semi-permanent-mains')">
-                    <div class="name">Vernis semi-permanent<small>Tenue impeccable ~ 40 min</small></div>
-                    <div class="dots"></div>
-                    <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                </div>
-                <div class="price-row" onclick="reserverSoin('pedicure-spa-semi-permanent')">
-                    <div class="name">Pédicure Spa + Semi-permanent<small>Le rituel complet ~ 60 min</small></div>
-                    <div class="dots"></div>
-                    <div class="price">90.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                </div>
-                <div class="price-row" onclick="reserverSoin('pedicure-gel-acrylique')">
-                    <div class="name">Gel ou Acrylique<small>Construction solide ~ 55 min</small></div>
-                    <div class="dots"></div>
-                    <div class="price">60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                </div>
-                <div class="price-row" onclick="reserverSoin('pedicure-gel-acrylique')">
-                    <div class="name">Pédicure Spa + Gel / Acrylique<small>L'excellence absolue ~ 1h15 min</small></div>
-                    <div class="dots"></div>
-                    <div class="price">110.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                </div>
-            </div>
-            <div class="service-cta">
-                <a href="#" onclick="reserverSoin('general'); return false;" class="btn btn-primary">Voir les disponibilités <span class="arrow"></span></a>
-                <button class="btn btn-ghost" onclick="openModal('modal-pedicure')">En découvrir davantage</button>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
 <section class="service-detail" id="coiffure">
     <div class="container">
@@ -835,46 +913,96 @@
                 <h3>Prestations Atelier Coiffure</h3>
                 <span class="pricing-note">Cliquez sur votre prestation pour réserver</span>
             </div>
-            <div class="pricing-grid">
-                <div class="price-row" onclick="reserverSoin('tresses-draid')">
+
+            <div class="pricing-filters">
+                <button class="filter-btn active" onclick="filtrerCoiffure('all')">Toutes les prestations</button>
+                <button class="filter-btn" onclick="filtrerCoiffure('avec-ext')">Avec extensions</button>
+                <button class="filter-btn" onclick="filtrerCoiffure('sans-ext')">Sans extensions</button>
+                <button class="filter-btn" onclick="filtrerCoiffure('soins')">Soins & Classique</button>
+            </div>
+
+            <div class="pricing-grid" id="coiffure-grid">
+                <div class="price-row" data-category="avec-ext" onclick="reserverSoin('tresses-draid')">
                     <div class="name">Tresses draid<small>Avec extensions</small></div>
                     <div class="dots"></div>
                     <div class="price">dès 160.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('tresses-plaquees')">
-                    <div class="name">Tresses plaquées<small>Avec ou sans extensions</small></div>
-                    <div class="dots"></div>
-                    <div class="price">dès 50.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
-                </div>
-                <div class="price-row" onclick="reserverSoin('vanilles-twists')">
-                    <div class="name">Vanilles ou Twists<small>Coiffure protectrice</small></div>
+                <div class="price-row" data-category="avec-ext" onclick="reserverSoin('tresses-plaquees-ext')">
+                    <div class="name">Tresses plaquées<small>Avec extensions</small></div>
                     <div class="dots"></div>
                     <div class="price">dès 100.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('entretien-locks')">
-                    <div class="name">Serrer les locks / Rasta<small>Entretien et soin</small></div>
+                <div class="price-row" data-category="avec-ext" onclick="reserverSoin('deux-tresses-ext')">
+                    <div class="name">2 grandes tresses plaquées<small>Avec extensions</small></div>
                     <div class="dots"></div>
-                    <div class="price">dès 160.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                    <div class="price">50.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('pose-tissage')">
-                    <div class="name">Tissage<small>Pose complète harmonieuse</small></div>
+                <div class="price-row" data-category="avec-ext" onclick="reserverSoin('vanilles-twists-ext')">
+                    <div class="name">Vanilles ou Twists<small>Avec extensions</small></div>
                     <div class="dots"></div>
                     <div class="price">dès 120.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('pose-perruque')">
+
+                <div class="price-row" data-category="sans-ext" onclick="reserverSoin('tresses-plaquees')">
+                    <div class="name">Tresses plaquées<small>Sans extensions</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 50.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="sans-ext" onclick="reserverSoin('deux-tresses-sans')">
+                    <div class="name">2 grandes tresses plaquées<small>Sans extensions</small></div>
+                    <div class="dots"></div>
+                    <div class="price">45.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="sans-ext" onclick="reserverSoin('vanilles-twists')">
+                    <div class="name">Vanilles ou Twists<small>Sans extensions</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 100.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="sans-ext" onclick="reserverSoin('barrels-twists')">
+                    <div class="name">Barrels Twists<small>Sans extensions</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 100.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+
+                <div class="price-row" data-category="soins" onclick="reserverSoin('entretien-locks')">
+                    <div class="name">Serrer les locks ou rasta<small>Entretien</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 160.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="soins" onclick="reserverSoin('pose-tissage')">
+                    <div class="name">Tissage<small>Pose complète</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 120.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="soins" onclick="reserverSoin('pose-perruque')">
                     <div class="name">Pose perruque<small>Ajustement sur-mesure</small></div>
                     <div class="dots"></div>
                     <div class="price">dès 60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('defrisage')">
-                    <div class="name">Défrisage<small>Soin lissant & nourrissant</small></div>
+                <div class="price-row" data-category="soins" onclick="reserverSoin('chignon')">
+                    <div class="name">Chignon<small>Coiffure événement</small></div>
                     <div class="dots"></div>
                     <div class="price">dès 80.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
-                <div class="price-row" onclick="reserverSoin('coloration-brushing')">
-                    <div class="name">Coloration & Brushing<small>Mise en lumière parfaite</small></div>
+                <div class="price-row" data-category="soins" onclick="reserverSoin('defrisage')">
+                    <div class="name">Défrisage<small>Soin lissant</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 80.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="soins" onclick="reserverSoin('couleur-racine')">
+                    <div class="name">Couleur racine<small>Entretien couleur</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 60.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="soins" onclick="reserverSoin('brushing')">
+                    <div class="name">Brushing<small>Mise en forme</small></div>
                     <div class="dots"></div>
                     <div class="price">dès 50.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
+                </div>
+                <div class="price-row" data-category="soins" onclick="reserverSoin('shampooing')">
+                    <div class="name">Shampooing<small>Soin lavant profond</small></div>
+                    <div class="dots"></div>
+                    <div class="price">dès 20.— <span style="font-size: 11px; margin-left: 8px; color: var(--signature);">✺</span></div>
                 </div>
             </div>
             <div class="service-cta">
@@ -963,232 +1091,228 @@
             <div style="margin-top: 10px;">
                 <a href="https://www.google.com/search?sca_esv=b8c2a88c761a13ca&sxsrf=ANbL-n6RlqX-nNSZNxbETR1VS_KLm5iKhw:1778236489047&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWduoA-o-svSBlsxOh2NpDxdCddpYxmLF1NEp2KzsZQt8kXPw4K99Cp_NuXruKSj4-JIZCoo0GQHhx03RKHLwyMT-Ml_2PIo0MLn6sp7UkDNYbID26obZDtLYhtkKLdYwFPTTlc%3D&q=Institut+Lyne+Beauty+Onglerie+%26+Coiffeur+Avis&sa=X&ved=2ahUKEwjNl4aSv6mUAxXbVqQEHeKbPWsQ0bkNegQIKxAF&biw=1440&bih=778&dpr=2&zx=1778236697262" target="_blank" rel="noopener" class="reviews-google-link">Rédiger un avis</a><br>
             </div>
-            <br><div class="reviews-carousel reveal">
-            <div class="reviews-track" id="reviewsTrack">
+            <br>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Merci infiniment pour votre gentillesse et votre travail impeccable !"</p>
-                        <div class="review-author">
-                            <div class="review-avatar">V</div>
-                            <div class="review-meta">
-                                <strong>Valérie Sciboz</strong>
-                                <span>Beauté des mains & Soin</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Expérience incroyable, ongle magnifique et grande expertise. Très professionnel et aimable."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">S</div>
-                            <div class="review-meta">
-                                <strong>Stefania B.</strong>
-                                <span>Pose de gel & Finitions</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="reviews-carousel reveal">
+                <div class="reviews-track" id="reviewsTrack">
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Service impeccable et accueil chaleureux. Je vous le conseille musique à gogo selon choix. Bref j'ai passé un bon moment"</p>
-                        <div class="review-author">
-                            <div class="review-avatar">P</div>
-                            <div class="review-meta">
-                                <strong>Patricia Hirt</strong>
-                                <span>Pédicure Spa & Détente</span>
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Merci infiniment pour votre gentillesse et votre travail impeccable !"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">V</div>
+                                <div class="review-meta">
+                                    <strong>Valérie Sciboz</strong>
+                                    <span>Beauté des mains & Soin</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Expérience incroyable, ongle magnifique et grande expertise. Très professionnel et aimable."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">S</div>
+                                <div class="review-meta">
+                                    <strong>Stefania B.</strong>
+                                    <span>Pose de gel & Finitions</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"J'ai eu une expérience incroyable dans ce salon de manucure. Le personnel était très aimable et attentionné, l'ambiance était très relaxante, et le résultat final a dépassé mes attentes. Je le recommande sans hésiter à tous ceux qui recherchent un service de qualité et un moment de détente."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">R</div>
-                            <div class="review-meta">
-                                <strong>Raul Baeza</strong>
-                                <span>Manucure Premium Homme</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Coiffeuse expérimentée, accueillante et très professionnelle! Elle sait répondre aux demandes des clients"</p>
-                        <div class="review-author">
-                            <div class="review-avatar">G</div>
-                            <div class="review-meta">
-                                <strong>Gui F.</strong>
-                                <span>Coiffure Sur-Mesure</span>
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Service impeccable et accueil chaleureux. Je vous le conseille musique à gogo selon choix. Bref j'ai passé un bon moment"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">P</div>
+                                <div class="review-meta">
+                                    <strong>Patricia Hirt</strong>
+                                    <span>Pédicure Spa & Détente</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"J'ai eu une expérience incroyable dans ce salon de manucure. Le personnel était très aimable et attentionné, l'ambiance était très relaxante, et le résultat final a dépassé mes attentes. Je le recommande sans hésiter à tous ceux qui recherchent un service de qualité et un moment de détente."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">R</div>
+                                <div class="review-meta">
+                                    <strong>Raul Baeza</strong>
+                                    <span>Manucure Premium Homme</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"J'ai passé un très bon moment et je suis ressortie de son institut avec une superbe manucure ! Jocelyne est très sympathique et fait attention aux détails. Je recommande vivement. et ne déçoit jamais. Je vous recommande d'aller visiter son salon!"</p>
-                        <div class="review-author">
-                            <div class="review-avatar">A</div>
-                            <div class="review-meta">
-                                <strong>Anne-Laure</strong>
-                                <span>Manucure Signature</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Excellent travail, formidable ! & Joseline est très professionnelle et polie. Je la recommande vivement."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">J</div>
-                            <div class="review-meta">
-                                <strong>Javier Martinez</strong>
-                                <span>Soin Esthétique Homme</span>
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Coiffeuse expérimentée, accueillante et très professionnelle! Elle sait répondre aux demandes des clients"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">G</div>
+                                <div class="review-meta">
+                                    <strong>Gui F.</strong>
+                                    <span>Coiffure Sur-Mesure</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"J'ai passé un très bon moment et je suis ressortie de son institut avec une superbe manucure ! Jocelyne est très sympathique et fait attention aux détails. Je recommande vivement. et ne déçoit jamais. Je vous recommande d'aller visiter son salon!"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">A</div>
+                                <div class="review-meta">
+                                    <strong>Anne-Laure</strong>
+                                    <span>Manucure Signature</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Une pose de gel d'une finesse rare. Jocelyne prend le temps, écoute, conseille. Trois semaines plus tard, mes ongles sont impeccables. Je ne change plus d'institut."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">C</div>
-                            <div class="review-meta">
-                                <strong>Camille R.</strong>
-                                <span>Pose gel + Nail art</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Mes tresses plaquées sont magnifiques, tenue parfaite. Jocelyne a la main légère et un vrai œil. L'ambiance du salon est cocooning, on s'y sent comme chez une amie."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">A</div>
-                            <div class="review-meta">
-                                <strong>Aïssatou D.</strong>
-                                <span>Tresses plaquées</span>
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Excellent travail, formidable ! & Joseline est très professionnelle et polie. Je la recommande vivement."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">J</div>
+                                <div class="review-meta">
+                                    <strong>Javier Martinez</strong>
+                                    <span>Soin Esthétique Homme</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Une pose de gel d'une finesse rare. Jocelyne prend le temps, écoute, conseille. Trois semaines plus tard, mes ongles sont impeccables. Je ne change plus d'institut."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">C</div>
+                                <div class="review-meta">
+                                    <strong>Camille R.</strong>
+                                    <span>Pose gel + Nail art</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"J'ai testé le combo pédicure spa + semi-permanent : un pur moment de douceur. Le rendu est sublime et la tenue dépasse mes attentes. Bravo Jocelyne."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">S</div>
-                            <div class="review-meta">
-                                <strong>Sophie M.</strong>
-                                <span>Pédicure Spa</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Mon tissage est parfait, naturel, exactement ce que j'avais demandé. Jocelyne maîtrise son art et le salon est ultra propre. Je recommande sans hésiter."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">M</div>
-                            <div class="review-meta">
-                                <strong>Mariama K.</strong>
-                                <span>Tissage complet</span>
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Mes tresses plaquées sont magnifiques, tenue parfaite. Jocelyne a la main légère et un vrai œil. L'ambiance du salon est cocooning, on s'y sent comme chez une amie."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">A</div>
+                                <div class="review-meta">
+                                    <strong>Aïssatou D.</strong>
+                                    <span>Tresses plaquées</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"J'ai testé le combo pédicure spa + semi-permanent : un pur moment de douceur. Le rendu est sublime et la tenue dépasse mes attentes. Bravo Jocelyne."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">S</div>
+                                <div class="review-meta">
+                                    <strong>Sophie M.</strong>
+                                    <span>Pédicure Spa</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Première pose acrylique, j'avais des appréhensions. Jocelyne a été d'une douceur et d'une pédagogie remarquables. Résultat : des ongles longs, élégants, ultra solides."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">L</div>
-                            <div class="review-meta">
-                                <strong>Léa B.</strong>
-                                <span>Première pose acrylique</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Coloration racines impeccable, ma teinte naturelle parfaitement raccord. Et l'ambiance Boudoir est juste à tomber. Mon adresse Fribourg attitrée désormais."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">N</div>
-                            <div class="review-meta">
-                                <strong>Nadia F.</strong>
-                                <span>Coloration racines</span>
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Mon tissage est parfait, naturel, exactement ce que j'avais demandé. Jocelyne maîtrise son art et le salon est ultra propre. Je recommande sans hésiter."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">M</div>
+                                <div class="review-meta">
+                                    <strong>Mariama K.</strong>
+                                    <span>Tissage complet</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Première pose acrylique, j'avais des appréhensions. Jocelyne a été d'une douceur et d'une pédagogie remarquables. Résultat : des ongles longs, élégants, ultra solides."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">L</div>
+                                <div class="review-meta">
+                                    <strong>Léa B.</strong>
+                                    <span>Première pose acrylique</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Un nail art floral d'une finesse incroyable. Jocelyne a une vraie patte d'artiste. Toutes mes copines me demandent qui me les fait. Je garde le secret… ou presque !"</p>
-                        <div class="review-author">
-                            <div class="review-avatar">É</div>
-                            <div class="review-meta">
-                                <strong>Élodie V.</strong>
-                                <span>Nail Art floral</span>
+
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Coloration racines impeccable, ma teinte naturelle parfaitement raccord. Et l'ambiance Boudoir est juste à tomber. Mon adresse Fribourg attitrée désormais."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">N</div>
+                                <div class="review-meta">
+                                    <strong>Nadia F.</strong>
+                                    <span>Coloration racines</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Un nail art floral d'une finesse incroyable. Jocelyne a une vraie patte d'artiste. Toutes mes copines me demandent qui me les fait. Je garde le secret… ou presque !"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">É</div>
+                                <div class="review-meta">
+                                    <strong>Élodie V.</strong>
+                                    <span>Nail Art floral</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Tresses rasta nickel, tenue trois mois sans frisotis. Pour un homme c'est rare de trouver quelqu'un qui prend le temps. Top à tous les niveaux."</p>
-                        <div class="review-author">
-                            <div class="review-avatar">D</div>
-                            <div class="review-meta">
-                                <strong>David O.</strong>
-                                <span>Tresses rasta</span>
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Tresses rasta nickel, tenue trois mois sans frisotis. Pour un homme c'est rare de trouver quelqu'un qui prend le temps. Top à tous les niveaux."</p>
+                            <div class="review-author">
+                                <div class="review-avatar">D</div>
+                                <div class="review-meta">
+                                    <strong>David O.</strong>
+                                    <span>Tresses rasta</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Un service de pédicure spa exceptionnel à Fribourg. Mes pieds n'ont jamais été aussi doux. Le vernis semi-permanent tient parfaitement. Le cadre est vraiment relaxant !"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">C</div>
+                                <div class="review-meta">
+                                    <strong>Chloé T.</strong>
+                                    <span>Pédicure Spa & Vernis</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Un service de pédicure spa exceptionnel à Fribourg. Mes pieds n'ont jamais été aussi doux. Le vernis semi-permanent tient parfaitement. Le cadre est vraiment relaxant !"</p>
-                        <div class="review-author">
-                            <div class="review-avatar">C</div>
-                            <div class="review-meta">
-                                <strong>Chloé T.</strong>
-                                <span>Pédicure Spa & Vernis</span>
+
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-stars">★ ★ ★ ★ ★</div>
+                            <p class="review-text">"Le meilleur salon pour des tresses africaines sur Fribourg. Jocelyne est à l'écoute, ne serre pas trop et le résultat est juste incroyable. Une vraie perle !"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">S</div>
+                                <div class="review-meta">
+                                    <strong>Sarah M.</strong>
+                                    <span>Tresses avec extensions</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> </div> <div class="reviews-dots" id="reviewsDots"></div>
+                <button class="review-arrow prev" onclick="prevSlide()" aria-label="Avis précédent">❮</button>
+                <button class="review-arrow next" onclick="nextSlide()" aria-label="Avis suivant">❯</button>
 
-                <div class="review-slide">
-                    <div class="review-card">
-                        <div class="review-stars">★ ★ ★ ★ ★</div>
-                        <p class="review-text">"Le meilleur salon pour des tresses africaines sur Fribourg. Jocelyne est à l'écoute, ne serre pas trop et le résultat est juste incroyable. Une vraie perle !"</p>
-                        <div class="review-author">
-                            <div class="review-avatar">S</div>
-                            <div class="review-meta">
-                                <strong>Sarah M.</strong>
-                                <span>Tresses avec extensions</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="reviews-dots" id="reviewsDots"></div>
-            <button class="review-arrow prev" onclick="prevSlide()" aria-label="Avis précédent">❮</button>
-            <button class="review-arrow next" onclick="nextSlide()" aria-label="Avis suivant">❯</button>
-        </div>
-        </div>
-</section>
-
+            </div> </div> </div> </section>
 <section class="gallery">
     <div class="container">
         <div class="gallery-header reveal">
@@ -1505,7 +1629,7 @@
         <button class="modal-close" onclick="closeModal('modal-pedicure')">×</button>
         <span class="eyebrow">Expertise · Univers II</span>
         <h2>La <em>pédicure</em> Spa & Beauté</h2>
-        
+
         <div style="background-color: #faf5f5; color: #8a3c3c; padding: 12px 16px; border-left: 3px solid #d97777; margin: 15px 0; font-size: 14px;">
             <strong>Information importante :</strong> Pour des raisons médicales et d'hygiène, l'esthéticienne ne prend pas en charge les personnes présentant des mycoses ou des pathologies du pied. Merci de vous orienter vers un podologue pour ces soins.
         </div>
@@ -1526,7 +1650,7 @@
     </div>
 </div>
 
-    <div class="modal" id="modal-coiffure">
+<div class="modal" id="modal-coiffure">
     <div class="modal-content">
         <button class="modal-close" onclick="closeModal('modal-coiffure')">×</button>
         <span class="eyebrow">Expertise · Univers III</span>
@@ -1626,6 +1750,28 @@
     }
 
     /* ============================================
+       FILTRES ONGLERIE
+       ============================================ */
+    window.filtrerOnglerie = function(categorie, event) {
+        // Mettre à jour l'état actif des boutons dans l'onglerie
+        const boutons = document.querySelectorAll('#onglerie .filter-btn');
+        boutons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Filtrer les lignes de prix
+        const lignes = document.querySelectorAll('#onglerie-grid .price-row, #onglerie-grid .pricing-subtitle');
+        lignes.forEach(ligne => {
+            const cat = ligne.getAttribute('data-category');
+            // Affiche si c'est la catégorie demandée, ou si c'est un supplément universel ("all")
+            if (categorie === 'all' || cat === categorie || cat === 'all') {
+                ligne.classList.remove('hidden');
+            } else {
+                ligne.classList.add('hidden');
+            }
+        });
+    };
+
+    /* ============================================
        MODALS
        ============================================ */
     function openModal(id) {
@@ -1680,6 +1826,27 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ============================================
+       FILTRES COIFFURE
+       ============================================ */
+    window.filtrerCoiffure = function(categorie) {
+        // Mettre à jour l'état actif des boutons
+        const boutons = document.querySelectorAll('.filter-btn');
+        boutons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Filtrer les lignes de prix
+        const lignes = document.querySelectorAll('#coiffure-grid .price-row');
+        lignes.forEach(ligne => {
+            if (categorie === 'all' || ligne.getAttribute('data-category') === categorie) {
+                ligne.classList.remove('hidden');
+            } else {
+                ligne.classList.add('hidden');
+            }
+        });
+    };
+
 </script>
 </body>
 </html>
