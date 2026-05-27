@@ -443,13 +443,16 @@
             .about-stats { gap: 20px; }
         }
 
-        @media (max-width: 768px) {
-            .container { padding: 0 20px; }
+        @media (max-width: 890px) {
             .nav-links { position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: var(--bg); flex-direction: column; justify-content: center; gap: 32px; transition: right var(--t-med); box-shadow: var(--shadow-deep); padding: 40px; }
             .nav-links.open { right: 0; }
             .burger { display: block; z-index: 102; }
             .nav-cta { display: none; }
             .nav-book-icon { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
             .hero h1 { font-size: 2rem; }
             .hero-content { padding: 0 20px; }
             .hero-visual { height: auto; aspect-ratio: 4/5; min-height: unset; margin-top: 40px; padding: 0; }
